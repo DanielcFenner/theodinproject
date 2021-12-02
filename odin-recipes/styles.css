@@ -1,0 +1,10 @@
+body {
+    font-family: sans-serif;
+    margin: 16px
+}
+
+.herotitle {
+    background-color: rgb(181, 222, 255);
+    padding: 16px;
+    border-radius: 8px;
+}
