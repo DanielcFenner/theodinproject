@@ -1,10 +1,33 @@
 body {
     font-family: sans-serif;
-    margin: 16px
+    margin: 16px;
 }
 
 .herotitle {
     background-color: rgb(181, 222, 255);
     padding: 16px;
     border-radius: 8px;
+    animation: slideInFromtLeft .5s;
+}
+
+.bodyanimation {
+    animation: slideInFromtRight .5s;
+}
+
+@keyframes slideInFromtLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromtRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
