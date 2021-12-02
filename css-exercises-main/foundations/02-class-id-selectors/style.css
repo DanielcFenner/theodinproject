@@ -1,0 +1,19 @@
+.numberone {
+    background-color: rgb(236, 79, 145);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#numbertwo {
+    font-size: 36px;
+    color: blue;
+}
+
+.cooler {
+    font-size: 24px;
+}
+
+#numberfour {
+    background-color: green;
+    font-size: 24px;
+    font-weight: bold;
+}
