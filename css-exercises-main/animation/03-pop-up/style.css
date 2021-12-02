@@ -7,6 +7,14 @@ body {
   overflow: hidden;
 }
 
+button {
+  cursor: pointer;
+}
+
+button:hover{
+  box-shadow: 1px 1px 2px #0000007c;
+}
+
 .button-container {
   width: 100vw;
   height: 100vh;
@@ -42,6 +50,8 @@ body {
   align-items: center;
   margin-top: 10%;
   opacity: 0;
+  transition-property: all;
+  transition-duration: .25s;
 }
 
 #close-modal {
@@ -51,4 +61,18 @@ body {
   border: none;
   border-radius: 5px;
   font-weight: 600;
+}
+
+.popup-modal.show {
+  opacity: 100;
+  margin-top: 0%;
+  transition-property: all;
+  transition-duration: .25s;
+}
+
+.popup-modal#close-modal.show{
+  opacity: 0;
+  margin-top: 10%;
+  transition-property: all;
+  transition-duration: .25s;
 }
