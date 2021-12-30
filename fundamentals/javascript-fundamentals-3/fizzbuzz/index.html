@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let response = parseInt(prompt("Enter the number for fizzbuzz"));
+
+        function fizzBuzz(num){
+            if (num % 3 == 0 && num % 5 == 0) {
+                return "FizzBuzz";
+            } else if (num % 5 == 0) {
+                return "Buzz";
+            } else if (num % 3 == 0) {
+                return "Fizz";
+            }
+            return false;
+        }
+
+        for (let i = 1; i <= response; i++) {
+            if (!fizzBuzz(i)) {
+                console.log(i);
+            } else {
+                console.log(fizzBuzz(i));
+            }
+            
+        }
+    </script>
+    
+</body>
+</html>
