@@ -1,0 +1,132 @@
+/* CSS RESET */
+:where(:not(iframe,canvas,img,svg,video):not(svg *,symbol *)){all:unset;display:revert}menu,ol,ul{list-style:none}img{max-width:100%}table{border-collapse:collapse}textarea{white-space:revert}:where([hidden]){display:none}:where([contenteditable]){-moz-user-modify:read-write;-webkit-user-modify:read-write;overflow-wrap:break-word;-webkit-line-break:after-white-space}:where([draggable=true]){-webkit-user-drag:element}
+/* CSS RESET */
+
+* {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+body {
+    background-color: var(--lime1);
+    --lime1: hsl(85 50.0% 98.7%);
+    --lime2: hsl(85 66.7% 96.5%);
+    --lime3: hsl(85 76.0% 92.3%);
+    --lime4: hsl(84 75.3% 87.5%);
+    --lime5: hsl(84 71.5% 81.9%);
+    --lime6: hsl(82 65.0% 74.6%);
+    --lime7: hsl(79 53.2% 61.8%);
+    --lime8: hsl(76 61.7% 45.1%);
+    --lime9: hsl(81 67.0% 50.0%);
+    --lime10: hsl(80 68.3% 46.9%);
+    --lime11: hsl(75 80.0% 26.0%);
+    --lime12: hsl(78 70.0% 11.5%);
+        --red1: hsl(359 100% 99.4%);
+        --red2: hsl(359 100% 98.6%);
+        --red3: hsl(360 100% 96.8%);
+        --red4: hsl(360 97.9% 94.8%);
+        --red5: hsl(360 90.2% 91.9%);
+        --red6: hsl(360 81.7% 87.8%);
+        --red7: hsl(359 74.2% 81.7%);
+        --red8: hsl(359 69.5% 74.3%);
+        --red9: hsl(358 75.0% 59.0%);
+        --red10: hsl(358 69.4% 55.2%);
+        --red11: hsl(358 65.0% 48.7%);
+        --red12: hsl(354 50.0% 14.6%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 100vh;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: var(--lime9);
+    color: white;
+    font-size: 4rem;
+    padding: 1rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;    
+}
+
+.buttons {
+    font-size: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    cursor: pointer;
+}
+
+.buttons div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--lime3);
+    border-radius: 0.5rem;
+    width: 8rem;
+    height: 8rem;
+}
+
+.buttons div:hover {
+    background-color: var(--lime5);
+}
+
+.choices {
+    font-size: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    cursor: pointer;
+}
+
+.choices div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--lime3);
+    border-radius: 0.5rem;
+    width: 8rem;
+    height: 8rem;
+}
+
+.playerChoiceBox p {
+    font-size: 1rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    background-color: var(--lime9);
+    color:white;
+}
