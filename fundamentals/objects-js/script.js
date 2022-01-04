@@ -26,6 +26,5 @@ function multiplyNumeric(object) {
     }
 }
 
-multiplyNumeric(menu);
+console.log(menu.width);
 
-console.log(menu.title);
