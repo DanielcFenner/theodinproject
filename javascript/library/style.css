@@ -94,11 +94,13 @@ button {
     text-align: center;
     color: white;
     padding: 0.5rem 1rem;
-    background-color: var(--bronze9);
+    transition: background-size .5s;
+    background: linear-gradient(45deg, var(--bronze9), var(--bronze7));
+    background-size: 200%;
 }
 
 button:hover {
-    background-color: var(--bronze10);
+    background-size: 100%;
 }
 
 footer {
