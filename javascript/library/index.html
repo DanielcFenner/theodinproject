@@ -22,10 +22,19 @@
 
         <main>
             <button class="newBook">NEW BOOK</button>
-            <div class="cards">
 
+            <form class="bookForm" action="index.html" method="post">
+                <p>Title</p>
+                <input class="title" type="text" value="">
+                <p>Author</p>
+                <input class="author" type="text" value="" />
+                <p>Pages</p>
+                <input class="pages" type="text" value="" />
+                <label>Finished?<input class="finished" type="checkbox" /><span></span></label>
+                <input type="submit" value="ADD BOOK">
+            </form>
 
-            </div>
+            <div class="cards"></div>
         </main>
 
         <footer><a href="https://www.danielfenner.dev" target="_blank">made by @danielfennerdev</a></footer>

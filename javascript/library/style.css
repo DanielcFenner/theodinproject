@@ -25,6 +25,7 @@
             --sand10: hsl(55 1.7% 51.9%);
             --sand11: hsl(50 2.0% 43.1%);
             --sand12: hsl(50 6.0% 10.0%);
+                --blue6: hsl(209 81.2% 84.5%);
 }
 
 h1 {
@@ -117,4 +118,42 @@ footer {
     background-color: var(--sand3);
     padding: 1rem;
     border-radius: 0.5rem;
+}
+
+.card:hover {
+    background-color: var(--sand4);
+}
+
+.bookForm {
+    border-radius: 0.5rem;
+    background-color: var(--bronze6);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    line-height: 0;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: var(--sand1);
+    border-radius: 0.5rem;
+}
+
+input[type=test]:focus {
+    box-shadow: inset 0 0 7px var(--blue6);
+}
+
+input[type=submit] {
+    cursor: pointer;
+    font-size: 1.25rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    color: white;
+
+    padding: 0.5rem 1rem;
+    transition: background-size .5s;
+    background: linear-gradient(45deg, var(--bronze9), var(--bronze7));
+    background-size: 200%;
 }

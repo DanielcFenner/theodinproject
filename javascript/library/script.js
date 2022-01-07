@@ -40,7 +40,7 @@ function renderLibrary(libraryArray) {
         newDiv.appendChild(newAuthor);
         // add pages to card
         let newPages = document.createElement("p");
-        newPages.textContent = `${book.pages}`;
+        newPages.textContent = `Pages ${book.pages}`;
         newDiv.appendChild(newPages);
         // add read or not to card
         let readText;
@@ -62,9 +62,9 @@ addBookToLibrary("Spiderman", "Marvel Guy", 362, true);
 addBookToLibrary("Barney The Dinosaur", "Who Knows", 15, true);
 renderLibrary(myLibrary.reverse());
 renderLibrary(myLibrary.reverse());
+renderLibrary(myLibrary);
 renderLibrary(myLibrary.reverse());
-renderLibrary(myLibrary.reverse());
-renderLibrary(myLibrary.reverse());
+renderLibrary(myLibrary);
 renderLibrary(myLibrary.reverse());
 renderLibrary(myLibrary.reverse());
 renderLibrary(myLibrary.reverse());
