@@ -23,16 +23,13 @@
         <main>
             <button class="newBook">NEW BOOK</button>
 
-            <form class="bookForm" action="index.html" method="post">
-                <p>Title</p>
-                <input class="title" type="text" value="">
-                <p>Author</p>
-                <input class="author" type="text" value="" />
-                <p>Pages</p>
-                <input class="pages" type="text" value="" />
-                <label>Finished?<input class="finished" type="checkbox" /><span></span></label>
-                <input type="submit" value="ADD BOOK">
-            </form>
+            <div class="bookForm">
+                <input id="title" type="text" placeholder="Title">
+                <input id="author" type="text" placeholder="Author" />
+                <input id="pages" type="text" placeholder="Pages" />
+                <label>Read? <input id="read" type="checkbox" /> <span></span></label>
+                <button class="formSubmit">ADD BOOK</button>
+            </div>
 
             <div class="cards"></div>
         </main>
