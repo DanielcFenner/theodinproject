@@ -1,0 +1,104 @@
+/* CSS RESET */:where(:not(iframe,canvas,img,svg,video):not(svg *,symbol *)){all:unset;display:revert}menu,ol,ul{list-style:none}img{max-width:100%}table{border-collapse:collapse}textarea{white-space:revert}:where([hidden]){display:none}:where([contenteditable]){-moz-user-modify:read-write;-webkit-user-modify:read-write;overflow-wrap:break-word;-webkit-line-break:after-white-space}:where([draggable=true]){-webkit-user-drag:element}
+
+* {
+    box-sizing: border-box;
+    --pink1: hsl(318 25.0% 9.6%);
+    --pink2: hsl(319 32.2% 11.6%);
+    --pink3: hsl(319 41.0% 16.0%);
+    --pink4: hsl(320 45.4% 18.7%);
+    --pink5: hsl(320 49.0% 21.1%);
+    --pink6: hsl(321 53.6% 24.4%);
+    --pink7: hsl(321 61.1% 29.7%);
+    --pink8: hsl(322 74.9% 37.5%);
+    --pink9: hsl(322 65.0% 54.5%);
+    --pink10: hsl(323 72.8% 59.2%);
+    --pink11: hsl(325 90.0% 66.4%);
+    --pink12: hsl(322 90.0% 95.8%);
+    --mauve1: hsl(246 6.0% 9.0%);
+    --mauve2: hsl(240 5.1% 11.6%);
+    --mauve3: hsl(241 5.0% 14.3%);
+    --mauve4: hsl(242 4.9% 16.5%);
+    --mauve5: hsl(243 4.9% 18.8%);
+    --mauve6: hsl(244 4.9% 21.5%);
+    --mauve7: hsl(245 4.9% 25.4%);
+    --mauve8: hsl(247 4.8% 32.5%);
+    --mauve9: hsl(252 4.0% 45.2%);
+    --mauve10: hsl(247 3.4% 50.7%);
+    --mauve11: hsl(253 4.0% 63.7%);
+    --mauve12: hsl(256 6.0% 93.2%);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(var(--pink1), var(--pink2));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--mauve12)
+}
+
+.calculator {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--mauve2);
+    width: 400px;
+    height: 520px;
+    border-radius: 0.5rem;
+    gap: 1rem;
+    padding: 1rem;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.screen {
+    color: var(--mauve1);
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    line-height: 2rem;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    padding: 1rem;
+    background-color: var(--mauve12);
+    height: 100px;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.screenSmall {
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+.calculator button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    border-radius: 0.5rem;
+    width: 80px;
+    height: 80px;
+    background-color: var(--mauve3);
+    cursor: pointer;
+}
+
+.calculator .special {
+    background-color: var(--pink9);
+}
+
+.calculator .special:hover {
+    background-color: var(--pink10);
+}
+
+.calculator button:hover {
+    background-color: var(--mauve4)
+}
+
+.calculator a {
+    font-size: 0.75rem;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    margin: 1rem;
+    color: rgba(255, 255, 255, 0.274);
+}
