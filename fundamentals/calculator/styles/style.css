@@ -1,6 +1,6 @@
 /* CSS RESET */:where(:not(iframe,canvas,img,svg,video):not(svg *,symbol *)){all:unset;display:revert}menu,ol,ul{list-style:none}img{max-width:100%}table{border-collapse:collapse}textarea{white-space:revert}:where([hidden]){display:none}:where([contenteditable]){-moz-user-modify:read-write;-webkit-user-modify:read-write;overflow-wrap:break-word;-webkit-line-break:after-white-space}:where([draggable=true]){-webkit-user-drag:element}
 
-* {
+:root {
     box-sizing: border-box;
     --pink1: hsl(318 25.0% 9.6%);
     --pink2: hsl(319 32.2% 11.6%);
