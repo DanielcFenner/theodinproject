@@ -30,9 +30,36 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.color {
+    border-radius: 100px;
+    width: 2rem;
+    height: 2rem;
+}
+
+.color red {
+    background-color: #eb9091;
+}
+
+.color pink {
+    background-color: #e38ec3;
+}
+
+.color blue {
+    background-color: #5eb0ef;
+}
+
+.color green {
+    background-color: #5bb98c;
+}
+
+.color orange {
+    background-color: #fa934e;
+}
+
 header {
     display:flex;
-    gap: 2rem;
+    justify-content: space-evenly;
+    gap: 1rem;
     width: 800px;
 }
 
@@ -48,6 +75,36 @@ header button {
 
 header button:hover {
     background-color: var(--sky1);
+}
+
+.color {
+    border-radius: 100px;
+    width: 2rem;
+    height: 2rem;
+}
+
+.red {
+    background-color: #eb9091;
+}
+
+.pink {
+    background-color: #e38ec3;
+}
+
+.blue {
+    background-color: #5eb0ef;
+}
+
+.green {
+    background-color: #5bb98c;
+}
+
+.orange {
+    background-color: #fa934e;
+}
+
+.black {
+    background-color: #000000;
 }
 
 h1 {
