@@ -42,6 +42,26 @@
     --slate12: hsl(210 6.0% 93.0%);
 }
 
+/* animations */
+
+@keyframes slideup {
+    from {
+        transform: translate(0px, 3rem);
+    }
+    to {
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes slidedown {
+    from {
+        transform: translate(0px, -3rem);
+    }
+    to {
+        transform: translate(0px, 0px);
+    }
+}
+
 body {
     background-color: var(--slate1);
     width: 100%;
@@ -57,13 +77,21 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
     height: 100%;
     width: 728px;
     gap: 1rem;
 }
 
+@media only screen and (max-width: 600px) {
+    #container {
+      width: 450px;
+    }
+  }
+
 h1 {
-    font-size: 2.5rem;
+    text-align: center;
+    font-size: 3rem;
     font-weight: 700;
     background-color: var(--blue9);
     background: linear-gradient(45deg, var(--pink9), var(--blue9));
@@ -73,4 +101,43 @@ h1 {
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent; 
     -moz-text-fill-color: transparent;
+    animation: slidedown 0.5s;
+}
+
+.menuScene {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.gameTypeButton {
+    cursor: pointer;
+    flex-basis: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--slate3);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+    gap: 0.5rem;
+    animation: slideup 0.5s;
+
+}
+
+.gameTypeButton:hover {
+    background-color: var(--slate4);
+}
+
+.icon {
+    font-size: 2rem;
 }
