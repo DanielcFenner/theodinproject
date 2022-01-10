@@ -3,7 +3,7 @@
 :root {
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.25rem;
-    color: white;
+    color: var(--slate12);
     --pink1: hsl(318 25.0% 9.6%);
     --pink2: hsl(319 32.2% 11.6%);
     --pink3: hsl(319 41.0% 16.0%);
@@ -83,7 +83,7 @@ body {
     gap: 1rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 720px) {
     #container {
       width: 450px;
     }
@@ -101,6 +101,13 @@ h1 {
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent; 
     -moz-text-fill-color: transparent;
+    animation: slidedown 0.5s;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
     animation: slidedown 0.5s;
 }
 
@@ -140,4 +147,38 @@ h1 {
 
 .icon {
     font-size: 2rem;
+}
+
+.difficultyScene {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.theGame {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 450px;
+    gap: 0.5rem;
+}
+
+.cell {
+    border-radius: 0.5rem;
+    background-color: var(--slate3);
+    width: 115px;
+    height: 115px;
+    animation: slideup 0.25s;
+}
+
+.cell:nth-child(2) {
+    animation: slideup 0.25s;
+    animation-delay: 1s;
+}
+
+.cell:hover {
+    background-color: var(--slate4);
 }
