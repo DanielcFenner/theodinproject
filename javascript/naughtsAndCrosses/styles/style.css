@@ -62,6 +62,39 @@
     }
 }
 
+@keyframes slidedownopacity {
+    from {
+        transform: translate(0px, -3rem);
+        opacity: 0%;
+    }
+    to {
+        transform: translate(0px, 0px);
+        opacity: 100%;
+    }
+}
+
+@keyframes slideupopacity {
+    from {
+        transform: translate(0px, 3rem);
+        opacity: 0%;
+    }
+    to {
+        transform: translate(0px, 0px);
+        opacity: 100%;
+    }
+}
+
+@keyframes scalein {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 100%;
+    }
+}
+
 body {
     background-color: var(--slate1);
     width: 100%;
@@ -80,7 +113,13 @@ body {
     padding: 1rem;
     height: 100%;
     width: 728px;
-    gap: 1rem;
+    gap: 2rem;
+}
+
+footer {
+    cursor: pointer;
+    color: var(--slate6);
+    font-size: 0.75rem;
 }
 
 @media only screen and (max-width: 720px) {
@@ -137,8 +176,20 @@ h2 {
     padding: 1rem;
     text-align: center;
     gap: 0.5rem;
-    animation: slideup 0.5s;
+    opacity: 0%;
+    animation: slideupopacity 0.3s;
+    animation-fill-mode: both;
+}
 
+.gameTypeButton:nth-child(2) {
+    animation: slideupopacity 0.3s;
+    animation-delay: 0.1s;
+    animation-fill-mode: both;
+}
+.gameTypeButton:nth-child(3) {
+    animation: slideupopacity 0.3s;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
 }
 
 .gameTypeButton:hover {
@@ -150,7 +201,7 @@ h2 {
 }
 
 .difficultyScene {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -159,7 +210,7 @@ h2 {
 }
 
 .theGame {
-    display: flex;
+    display: none;
     justify-content: center;
     flex-wrap: wrap;
     width: 450px;
@@ -167,16 +218,77 @@ h2 {
 }
 
 .cell {
+    cursor: pointer;
     border-radius: 0.5rem;
     background-color: var(--slate3);
     width: 115px;
     height: 115px;
-    animation: slideup 0.25s;
+    opacity: 0%;
+    animation: slideupopacity 0.25s;
+    animation-fill-mode: both;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.playerOne {
+    color: var(--blue9);
+    animation: scalein 0.3s ease-in-out;
+}
+
+.playerTwo {
+    color: var(--pink9);
+    animation: scalein 0.3s ease-in-out;
 }
 
 .cell:nth-child(2) {
-    animation: slideup 0.25s;
-    animation-delay: 1s;
+    animation: slideupopacity 0.25s;
+    animation-delay: 0.05s;
+    animation-fill-mode: both;
+}
+
+.cell:nth-child(3) {
+    animation: slideupopacity 0.25s;
+    animation-delay: 0.1s;
+    animation-fill-mode: both;
+}
+
+.cell:nth-child(6) {
+    animation: slideupopacity 0.25s;
+    animation-delay: 0.15s;
+    animation-fill-mode: both;
+}
+
+.cell:nth-child(5) {
+    animation: slideupopacity 0.25s;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+}
+
+.cell:nth-child(4) {
+    animation: slideupopacity 0.25s;
+    animation-delay: 0.25s;
+    animation-fill-mode: both;
+}
+
+.cell:nth-child(7) {
+    animation: slideupopacity 0.25s;
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+}
+
+.cell:nth-child(8) {
+    animation: slideupopacity 0.25s;
+    animation-delay: 0.35s;
+    animation-fill-mode: both;
+}
+
+.cell:nth-child(9) {
+    animation: slideupopacity 0.25s;
+    animation-delay: 0.4s;
+    animation-fill-mode: both;
 }
 
 .cell:hover {
