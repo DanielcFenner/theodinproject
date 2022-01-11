@@ -209,8 +209,27 @@ h2 {
     gap: 2rem;
 }
 
-.theGame {
+.gameScene {
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.gameInfo i {
+    color: var(--blue9);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.gameInfo {
+    animation: slidedownopacity 0.4s;
+}
+
+.cellContainer {
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
     width: 450px;
