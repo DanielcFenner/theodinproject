@@ -5,7 +5,6 @@ const Player = (name, symbol) => {
 
 // TEST PLAYERS FOR DEBUGGING PURPOSES
 let players = [Player("Player 1", "X"), Player("Player 2", "O")];
-console.log(players);
 
 // Module controls everything related to visuals
 const DisplayController = (() => {
@@ -36,8 +35,15 @@ const DisplayController = (() => {
 
     const playerRender = () => {
         const gameInfoPlayer = document.querySelector(".gameInfoPlayer");
-        gameInfoPlayer.textContent = Game.currentPlayer.name + " ";
+        gameInfoPlayer.textContent = Game.currentPlayer() + " ";
+        if (Game.currentPlayer() === players[0].name) {
+            gameInfoPlayer.style.color = "var(--blue9)";
+
+        } else {
+            gameInfoPlayer.style.color = "var(--pink9)";
+        }
     };
+
 
     return { sceneSwitch, playerRender };
 
@@ -45,7 +51,11 @@ const DisplayController = (() => {
 
 // Game module contains all game related logic
 const Game = (() => {
-    let currentPlayer = players[1];
+    let _currentPlayer = players[0];
+
+    const currentPlayer = () => {
+        return _currentPlayer.name;
+    }
 
     // Returns 3x3 array with empty strings
     const createBoard = () => {
@@ -61,14 +71,22 @@ const Game = (() => {
         return arr;
     };
 
+    const togglePlayer = () => {
+        if (_currentPlayer === players[0]) {
+            _currentPlayer = players[1];
+        } else {
+            _currentPlayer = players[0];
+        }
+        DisplayController.playerRender();
+    };
 
-    return { currentPlayer, createBoard };
+
+    return { currentPlayer, createBoard, togglePlayer };
 
 })();
 
-console.log(Game.createBoard());
-
-let cpu = document.querySelector(".cpu");
+// TEST STUFF
+let cpu = document.querySelector(".cell");
 let pvp = document.querySelector(".pvp");
 
 
@@ -77,5 +95,5 @@ pvp.addEventListener("click", () => {
 });
 
 cpu.addEventListener("click", () => {
-    DisplayController.sceneSwitch("difficulty");
+    Game.togglePlayer();
 })
