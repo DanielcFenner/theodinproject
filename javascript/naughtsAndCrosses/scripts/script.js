@@ -33,6 +33,7 @@ const DisplayController = (() => {
         }
     };
 
+    // Updates the game info text for the current player
     const playerRender = () => {
         const gameInfoPlayer = document.querySelector(".gameInfoPlayer");
         gameInfoPlayer.textContent = Game.currentPlayer() + " ";
@@ -44,8 +45,13 @@ const DisplayController = (() => {
         }
     };
 
+    const boardResetRender = () => {
+        const cell = document.querySelectorAll(".cell");
+        cell.forEach(element => element.textContent = "");
+    };
 
-    return { sceneSwitch, playerRender };
+
+    return { sceneSwitch, playerRender, boardResetRender };
 
 })();
 
@@ -80,20 +86,32 @@ const Game = (() => {
         DisplayController.playerRender();
     };
 
+    const playRound = () => {
+
+    };
+
 
     return { currentPlayer, createBoard, togglePlayer };
 
 })();
 
 // TEST STUFF
-let cpu = document.querySelector(".cell");
+let cell = document.querySelector(".cell");
 let pvp = document.querySelector(".pvp");
+let pve = document.querySelector(".cpu");
 
+pve.addEventListener("click", () => {
+    DisplayController.sceneSwitch("difficulty");
+});
 
 pvp.addEventListener("click", () => {
     DisplayController.sceneSwitch("game");
 });
 
-cpu.addEventListener("click", () => {
+cell.addEventListener("click", () => {
     Game.togglePlayer();
-})
+});
+
+window.addEventListener("keydown", () => {
+    DisplayController.boardResetRender();
+});
