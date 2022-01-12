@@ -2,22 +2,32 @@
 
 This is a repo where I'm going through The Odin Project tutorial series. Find it over at https://www.theodinproject.com
 
-## JS Objects: Library
+## Naughts & Crosses
+### Factory Functions & Modules
+
+https://danielcfenner.github.io/theodinproject/javascript/naughtsAndCrosses/
+
+## Library
+### JS Objects
 
 https://danielcfenner.github.io/theodinproject/javascript/library/
 
-## JS Basics: Calculator
+## Calculator
+### JS Basics
 
 https://danielcfenner.github.io/theodinproject/fundamentals/calculator/
 
-## JS Basics: Etch-A-Sketch
+## Etch-A-Sketch
+### JS Basics
 
 https://danielcfenner.github.io/theodinproject/fundamentals/js-etchasketch/
 
-## JS Basics: Rock Paper Scissors
+## Rock Paper Scissors
+### JS Basics
 
 https://danielcfenner.github.io/theodinproject/fundamentals/rockpaperscissors-ui/
 
-## Flexbox: Landing Page
+## Landing Page
+### Flexbox
 
 https://danielcfenner.github.io/theodinproject/fundamentals/landing-page/
