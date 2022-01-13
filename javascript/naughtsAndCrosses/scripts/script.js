@@ -36,36 +36,54 @@ const DisplayController = (() => {
     // Updates the game info text for the current player
     const playerRender = () => {
         const gameInfoPlayer = document.querySelector(".gameInfoPlayer");
+        const gameInfoText = document.querySelector(".gameInfoText");
+        gameInfoText.textContent = "it's your turn!";
         gameInfoPlayer.textContent = Game.currentPlayer().name + " ";
         gameInfoPlayer.style.color = Game.currentPlayer().colour;
     };
 
     const boardResetRender = () => {
-        const cell = document.querySelectorAll(".cell");
-        cell.forEach(element => element.textContent = "");
+        const gameScene = document.querySelector(".gameScene");
+        gameScene.style.display = "none";
+        setTimeout(() => { gameScene.style.display = "flex"; }, 1);
     };
 
     const playRender = (cell) => {
-        cell.style.color = Game.currentPlayer().colour;
-        cell.textContent = Game.currentPlayer().symbol;
+        const i = document.createElement('i');
+        i.style.color = Game.currentPlayer().colour;
+        i.textContent = Game.currentPlayer().symbol;
+        cell.appendChild(i);
     };
 
     const winRender = () => {
         const gameInfoPlayer = document.querySelector(".gameInfoPlayer");
         const gameInfoText = document.querySelector(".gameInfoText");
-        gameInfoPlayer.textContent = Game.currentPlayer().name + " WINS!";
-        gameInfoText.textContent = "";
+        gameInfoPlayer.textContent = Game.currentPlayer().name;
+        gameInfoText.textContent = "WINS!";
     };
 
     const drawRender = () => {
         const gameInfoPlayer = document.querySelector(".gameInfoPlayer");
         const gameInfoText = document.querySelector(".gameInfoText");
-        gameInfoPlayer.textContent = "";
+        gameInfoPlayer.textContent = "😲";
         gameInfoText.textContent = "It's a DRAW!";
     };
 
+    const resetButton = (showOrHide) => {
+        const menu = document.querySelector(".menuContainer");
+        switch (showOrHide) {
+            case "show":
+                menu.style.display = "flex";
+                break;
+            case "hide":
+                menu.style.display = "none";
+                break;
+        };
 
-    return { sceneSwitch, playerRender, boardResetRender, playRender, winRender, drawRender };
+    };
+
+
+    return { sceneSwitch, playerRender, boardResetRender, playRender, winRender, drawRender, resetButton };
 
 })();
 
@@ -106,7 +124,7 @@ const Game = (() => {
         let countO = 0;
         for (let i = 0; i < _board.length; i++) {
             for (let j = 0; j < _board.length; j++) {
-                if (_board[i][j] === "O") {
+                if (_board[i][j] === "X") {
                     countX++;
                 } else if (_board[i][j] === "O") {
                     countO++;
@@ -194,15 +212,6 @@ const Game = (() => {
         return true;
     };
 
-    const reset = () => {
-        for (let i = 0; i < _board.length; i++) {
-            for (let j = 0; j < _board.length; j++) {
-                _board[i][j] = " ";
-            }
-        }
-        DisplayController.boardResetRender();
-    };
-
     const initializeCells = () => {
         const cells = document.querySelectorAll(".cell");
         cells.forEach(cell => cell.textContent = " ");
@@ -240,11 +249,18 @@ const Game = (() => {
                     _board[2][2] = _currentPlayer.symbol;
                     break;
             }
+            console.log(_board);
             DisplayController.playRender(e.target);
             if (winBool()) {
                 DisplayController.winRender();
+                DisplayController.resetButton("show");
+                resetClick();
+                backToMenuClick();
             } else if (draw()) {
                 DisplayController.drawRender();
+                DisplayController.resetButton("show");
+                resetClick();
+                backToMenuClick();
             } else {
 
                 Game.togglePlayer();
@@ -252,12 +268,35 @@ const Game = (() => {
         }));
     };
 
+    const reset = () => {
+        _board = createBoard();
+        initializeCells();
+        DisplayController.boardResetRender();
+        DisplayController.resetButton("hide");
+        togglePlayer();
+    };
+
+    const resetClick = () => {
+        const resetButton = document.querySelector(".resetButton");
+        resetButton.addEventListener("click", () => {
+            reset();
+        });
+    };
+
+    const backToMenuClick = () => {
+        const backToMenuButton = document.querySelector(".backToMenuButton");
+        backToMenuButton.addEventListener("click", () => {
+            DisplayController.sceneSwitch("menu");
+            reset();
+        });
+    };
+
     const playRound = () => {
 
     };
 
 
-    return { currentPlayer, createBoard, togglePlayer, initializeCells, reset };
+    return { currentPlayer, createBoard, togglePlayer, initializeCells };
 
 })();
 
@@ -275,8 +314,3 @@ pve.addEventListener("click", () => {
 pvp.addEventListener("click", () => {
     DisplayController.sceneSwitch("game");
 });
-
-window.addEventListener("keydown", () => {
-    Game.reset();
-});
-

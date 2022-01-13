@@ -109,12 +109,16 @@ body {
 #container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 1rem;
     height: 100%;
     width: 728px;
     gap: 2rem;
+}
+
+main {
+    height: 100%;
 }
 
 footer {
@@ -213,7 +217,7 @@ h2 {
 .gameScene {
     display: none;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
@@ -227,9 +231,51 @@ h2 {
 
 .gameInfo {
     animation: slidedownopacity 0.4s;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    text-align: center;
+}
+
+.menuContainer {
+    display: none;
+    gap: 1rem;
+}
+
+.resetButton {
+    text-align: center;
+    cursor: pointer;
+    background: linear-gradient(45deg, var(--pink9), var(--blue9));
+    border-radius: 0.5rem;
+    background-size: 200%;
+    font-weight: 700;
+    padding: 1rem;
+    animation: slideupopacity 0.25s;
+    transition: 0.25s all;
+}
+
+.resetButton:hover {
+    background-size:100%;
+}
+
+.backToMenuButton {
+    text-align: center;
+    cursor: pointer;
+    background: var(--slate9);
+    border-radius: 0.5rem;
+    background-size: 200%;
+    font-weight: 700;
+    padding: 1rem;
+    animation: slideupopacity 0.25s;
+}
+
+.backToMenuButton:hover {
+    background: var(--slate8);
 }
 
 .cellContainer {
+    position: relative;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -251,6 +297,10 @@ h2 {
     align-items: center;
     font-size: 4rem;
     font-weight: 700;
+}
+
+.cell i {
+    animation: scalein 0.1s;
 }
 
 .scalein {
