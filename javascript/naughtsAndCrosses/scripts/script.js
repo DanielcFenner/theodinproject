@@ -262,7 +262,6 @@ const Game = (() => {
                 resetClick();
                 backToMenuClick();
             } else {
-
                 Game.togglePlayer();
             }
         }));
@@ -271,7 +270,6 @@ const Game = (() => {
     const reset = () => {
         _board = createBoard();
         initializeCells();
-        DisplayController.boardResetRender();
         DisplayController.resetButton("hide");
         togglePlayer();
     };
@@ -280,6 +278,7 @@ const Game = (() => {
         const resetButton = document.querySelector(".resetButton");
         resetButton.addEventListener("click", () => {
             reset();
+            DisplayController.boardResetRender();
         });
     };
 
