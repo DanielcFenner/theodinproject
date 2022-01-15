@@ -97,7 +97,7 @@ function renderBook(book) {
 
     // add author to card
     let newAuthor = document.createElement("p");
-    newAuthor.textContent = `${book.author}`;
+    newAuthor.textContent = `by ${book.author}`;
     newDiv.appendChild(newAuthor);
 
     // add pages to card
