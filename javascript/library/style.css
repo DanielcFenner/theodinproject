@@ -97,6 +97,10 @@ body {
     justify-content: center;
 }
 
+.warning {
+    color: var(--red9);
+}
+
 #container {
     display: flex;
     flex-direction: column;
