@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <title>weight loss calc</title>
+    <h1>weight loss calc</h1>
+    <input type="text" id="current-weight" placeholder="current weight">
+    <input type="text" id="goal-weight" placeholder="goal weight">
+    <h3>Goal date</h3>
+    <input type="date" id="date" placeholder="goal date">
+    <h3>Amount you need to lose per week</h3>
+    <button id="calculate">calculate</button>
+    <p id="amount"></p>
+
+    <script>
+        const date = document.querySelector("#date");
+        const currentWeight = document.querySelector("#current-weight");
+        const goalWeight = document.querySelector("#goal-weight");
+        const amount = document.querySelector("#amount");
+        const button = document.querySelector("#calculate");
+
+        function weightLossCalc() {
+            let currentDate = new Date();
+            let goalDate = new Date(date.value);
+            let differenceInTime = goalDate.getTime() - currentDate.getTime();
+            let differenceInDays = differenceInTime / (1000 * 3600 * 24);
+            let currentWeightValue = Number(currentWeight.value);
+            let goalWeightValue = Number(goalWeight.value);
+
+            let weightLossAmount = ((currentWeightValue - goalWeightValue) / differenceInDays) * 7;
+            amount.textContent = weightLossAmount.toFixed(2);
+        }
+
+        button.addEventListener("click", weightLossCalc);
+
+
+
+
+        weightLossCalc();
+    </script>
+</body>
+
+</html>
