@@ -116,7 +116,7 @@ header {
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    background-color: var(--sandA11);
+    background-color: var(--sandA12);
     backdrop-filter: blur(25px);
     width: 100%;
     color: var(--orange9);
@@ -144,7 +144,7 @@ footer a {
     align-items: center;
     gap: 1rem;
     width: 728px;
-    background-color: var(--sandA11);
+    background-color: var(--sandA12);
     backdrop-filter: blur(25px);
     animation: slideupopacity 0.25s;
 }
@@ -157,7 +157,7 @@ footer a {
     justify-content: center;
     gap: 1rem;
     width: 728px;
-    background-color: var(--sandA11);
+    background-color: var(--sandA12);
     backdrop-filter: blur(25px);
     animation: slideupopacity 0.25s;
 }
