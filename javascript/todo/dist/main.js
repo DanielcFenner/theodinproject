@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("hello world");let s=new class{constructor(){this.listArray=[]}add(s){this.listArray.push(s)}show(){return this.listArray}},t=new class{constructor(s,t){this.title=s,this.due=t}}("hi","1997");s.add(t),console.log(s.show())})();
