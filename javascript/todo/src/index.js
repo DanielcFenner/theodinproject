@@ -1,10 +1,13 @@
 import { compareAsc, format } from "date-fns";
-import Todo from "./todo.mjs";
 import List from "./list.mjs";
+import Dom from "./dom.mjs";
 
 console.log("hello world");
 
 let list = new List();
-let hi = new Todo("hi", "1997");
-list.add(hi);
+let list2 = new List();
+
+list.add("Get brocc", "1996", true);
+list2.add("Get sausage", "2012", false);
 console.log(list.show());
+console.log(list2.show());

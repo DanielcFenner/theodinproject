@@ -1,10 +1,13 @@
+import Todo from "./todo.mjs";
+
 export default class List {
-  constructor() {
+  constructor(title) {
+    this.title = title;
     this.listArray = [];
   }
 
-  add(object) {
-    this.listArray.push(object);
+  add(title, due) {
+    this.listArray.push(new Todo(title, due));
   }
 
   show() {
