@@ -133,11 +133,20 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  gap: 1rem;
   padding-top: 3.5rem;
   width: 100%;
 }
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 600px;
+}
+
 .new-todo {
+  width: 100%;
   display: flex;
   gap: 0.5rem;
   background-color: var(--slate2);
@@ -146,8 +155,8 @@ main {
 }
 
 .new-todo input {
-  height: 100%;
-  width: 600px;
+  display: flex;
+  flex-grow: 1;
   background-color: var(--slate3);
   border-radius: 0.5rem;
   border-style: none;
@@ -171,4 +180,17 @@ main {
   font-weight: 700;
   padding: 0.75rem 1rem;
   background-color: var(--slate3);
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.todo-element {
+  background-color: var(--slate2);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
 }
