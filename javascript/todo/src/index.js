@@ -9,8 +9,8 @@ const lists = {
 };
 let currentList = "groceries";
 lists[currentList].add(new Todo("Broccoli", "1996", true));
-lists[currentList].add(new Todo("Broccoli", "1996", true));
-lists[currentList].add(new Todo("Broccoli", "1996", true));
+lists[currentList].add(new Todo("Beans", "1996", true));
+lists[currentList].add(new Todo("Tortilla Wraps", "1996", true));
 
 Dom.renderList(lists[currentList].return());
 Dom.renderSidebarLists(lists);
