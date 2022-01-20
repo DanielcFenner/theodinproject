@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap");
 
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
 :root {
   --blue1: hsl(212 35% 9.2%);
   --blue2: hsl(216 50% 11.8%);
@@ -37,9 +42,18 @@
   --pink10: hsl(323 72.8% 59.2%);
   --pink11: hsl(325 90% 66.4%);
   --pink12: hsl(322 90% 95.8%);
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
   font-size: 18px;
+}
+
+@keyframes slideup {
+  from {
+    transform: translate(0px, 3rem);
+    opacity: 0%;
+  }
+  to {
+    transform: translate(0px, 0px);
+    opacity: 100%;
+  }
 }
 
 a {
@@ -169,6 +183,10 @@ main {
   background-color: var(--slate4);
 }
 
+.new-todo input:hover {
+  background-color: var(--slate4);
+}
+
 .add-todo {
   border-radius: 0.5rem;
   cursor: pointer;
@@ -176,10 +194,14 @@ main {
   border-style: none;
   color: var(--slate12);
   text-align: left;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   font-weight: 700;
   padding: 0.75rem 1rem;
-  background-color: var(--slate3);
+}
+
+.add-todo:hover {
+  background: linear-gradient(45deg, var(--blue10), var(--pink10));
 }
 
 .todo-container {
@@ -193,4 +215,9 @@ main {
   background-color: var(--slate2);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
+  animation: slideup 0.2s;
+}
+
+.todo-element:hover {
+  background-color: var(--slate3);
 }

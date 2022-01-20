@@ -1,10 +1,13 @@
 export default class List {
-  constructor(title) {
-    this.title = title;
+  constructor() {
     this.listArray = [];
   }
 
   add(todo) {
     this.listArray.push(todo);
+  }
+
+  return() {
+    return this.listArray;
   }
 }

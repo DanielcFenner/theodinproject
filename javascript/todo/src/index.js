@@ -3,20 +3,23 @@ import List from "./list.mjs";
 import Todo from "./todo.mjs";
 import Dom from "./dom.mjs";
 
-let groceries = new List();
-groceries.add(new Todo("Broccoli", "2021", "true"));
-groceries.add(new Todo("Tomatoes", "2022", "false"));
+const lists = {
+  groceries: new List(),
+  chores: new List(),
+};
+let currentList = "groceries";
+lists[currentList].add(new Todo("Broccoli", "1996", true));
+lists[currentList].add(new Todo("Broccoli", "1996", true));
+lists[currentList].add(new Todo("Broccoli", "1996", true));
 
-let todoTest1 = new Todo("Broccoli", "2021", "true");
+Dom.renderList(lists[currentList].return());
+Dom.renderSidebarLists(lists);
 
-console.log(groceries.listArray);
-
+// add todo button event listener
 const addTodo = document.querySelector(".add-todo");
 addTodo.addEventListener("click", () => {
+  let newTodo = new Todo(Dom.todoInputValue(), "hello", true);
+  lists[currentList].add(newTodo);
+  Dom.renderTodo(newTodo);
   Dom.resetTodoInput();
 });
-
-Dom.renderTodo(todoTest1);
-Dom.renderTodo(todoTest1);
-Dom.renderTodo(todoTest1);
-Dom.renderTodo(todoTest1);
