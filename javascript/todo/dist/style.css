@@ -39,6 +39,12 @@
   --pink12: hsl(322 90% 95.8%);
   font-family: "Poppins", sans-serif;
   font-weight: 400;
+  font-size: 18px;
+}
+
+a {
+  color: var(--blue11);
+  text-decoration: none;
 }
 
 h1 {
@@ -62,8 +68,8 @@ h4 {
 }
 
 h5 {
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 * {
@@ -74,7 +80,6 @@ h5 {
 
 body {
   background-color: var(--slate1);
-
   color: var(--slate12);
 }
 
@@ -88,7 +93,17 @@ header {
   background-color: var(--slate2);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 2rem;
+}
+
+header a {
+  display: flex;
+  justify-content: center;
+  color: var(--slate12);
+  opacity: 0.3;
+  font-size: 0.75rem;
+  text-align: center;
 }
 
 nav {
@@ -122,7 +137,7 @@ main {
   width: 100%;
 }
 
-.new-task {
+.new-todo {
   display: flex;
   gap: 0.5rem;
   background-color: var(--slate2);
@@ -130,7 +145,7 @@ main {
   border-radius: 0.5rem;
 }
 
-.new-task input {
+.new-todo input {
   height: 100%;
   width: 600px;
   background-color: var(--slate3);
@@ -141,11 +156,11 @@ main {
   color: var(--slate12);
 }
 
-.new-task input:focus-visible {
+.new-todo input:focus-visible {
   background-color: var(--slate4);
 }
 
-.add-task {
+.add-todo {
   border-radius: 0.5rem;
   cursor: pointer;
   background: linear-gradient(45deg, var(--blue9), var(--pink9));

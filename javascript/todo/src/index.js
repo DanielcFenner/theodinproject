@@ -1,13 +1,15 @@
 import { compareAsc, format } from "date-fns";
 import List from "./list.mjs";
+import Todo from "./todo.mjs";
 import Dom from "./dom.mjs";
 
-console.log("hello world");
+let groceries = new List();
+groceries.add(new Todo("Broccoli", "2021", "true"));
+groceries.add(new Todo("Tomatoes", "2022", "false"));
 
-let list = new List();
-let list2 = new List();
+console.log(groceries.listArray);
 
-list.add("Get brocc", "1996", true);
-list2.add("Get sausage", "2012", false);
-console.log(list.show());
-console.log(list2.show());
+const addTodo = document.querySelector(".add-todo");
+addTodo.addEventListener("click", () => {
+  Dom.resetTodoInput();
+});

@@ -12,23 +12,29 @@
   <body>
     <div id="container">
       <header>
-        <h2>todo</h2>
         <nav>
           <h5>Lists</h5>
-          <button>Groceries</button>
-          <button>Chores</button>
+          <button>🍏 Groceries</button>
+          <button>🥱 Chores</button>
           <h5>Inbox</h5>
-          <button>Today</button>
-          <button>This Week</button>
-          <button>This Month</button>
+          <button>📅 Today</button>
+          <button>🕡️ This Week</button>
+          <button>🗓️ This Month</button>
         </nav>
+        <div>
+          <h2>todo</h2>
+          <a href="https://www.danielfenner.dev" target="_blank"
+            >made by @danielfennerdev</a
+          >
+        </div>
       </header>
 
       <main>
-        <div class="new-task">
-          <input type="text" />
-          <button class="add-task">add task</button>
+        <div class="new-todo">
+          <input name="todo-input" type="text" class="todo-input" />
+          <button class="add-todo">add todo</button>
         </div>
+        <div class="todo-container"></div>
       </main>
 
       <footer></footer>
