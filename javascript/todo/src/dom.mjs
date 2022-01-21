@@ -8,13 +8,31 @@ export default class Dom {
     todoInput.value = "";
   }
 
-  static renderTodo(todo) {
+  static renderTodo(todo, lists) {
     const todoContainer = document.querySelector(".todo-container");
+
     const div = document.createElement("div");
     div.classList.add("todo-element");
+
     const p = document.createElement("p");
     p.textContent = todo.title;
     div.appendChild(p);
+
+    const remove = document.createElement("ion-icon");
+    remove.name = "close-outline";
+    remove.addEventListener("click", () => {
+      // find index of item in list
+      let listItemIndex = lists[this.activeList].findIndex((listItem) => {
+        if (listItem.title === p.textContent) {
+          return true;
+        }
+      });
+      todoContainer.removeChild(div);
+
+      lists[this.activeList].splice(listItemIndex, 1);
+    });
+    div.appendChild(remove);
+
     todoContainer.appendChild(div);
   }
 
@@ -47,25 +65,30 @@ export default class Dom {
     }
   }
 
-  static clearSidebarButtonActive(sidebarButtons) {
+  static activeSidebarButton() {
+    const listsContainer = document.querySelector("#lists");
+    const sidebarButtons = listsContainer.childNodes;
+
     for (let i = 0; i < sidebarButtons.length; i++) {
       const sidebarButton = sidebarButtons[i];
       sidebarButton.classList.remove("active");
+      if (this.activeList === sidebarButton.textContent) {
+        sidebarButton.classList.add("active");
+      }
     }
   }
 
-  static addSidebarListeners(lists, activeList) {
+  static addSidebarListeners(lists) {
     const listsContainer = document.querySelector("#lists");
     const sidebarButtons = listsContainer.childNodes;
 
     for (let i = 0; i < sidebarButtons.length; i++) {
       const sidebarButton = sidebarButtons[i];
       sidebarButton.addEventListener("click", () => {
-        this.clearSidebarButtonActive(sidebarButtons);
         this.renderClearTodos();
         this.renderList(lists[sidebarButton.textContent]);
-        sidebarButton.classList.add("active");
         this.activeList = sidebarButton.textContent;
+        this.activeSidebarButton();
       });
     }
   }

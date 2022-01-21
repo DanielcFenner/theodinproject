@@ -225,6 +225,8 @@ main {
 }
 
 .todo-element {
+  display: flex;
+  justify-content: space-between;
   background-color: var(--slate2);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -233,4 +235,16 @@ main {
 
 .todo-element:hover {
   background-color: var(--slate3);
+}
+
+ion-icon {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--slate7);
+  border-radius: 0.25rem;
+}
+
+ion-icon:hover {
+  background-color: var(--slate6);
+  color: var(--slate9);
 }
