@@ -126,10 +126,15 @@ nav {
   gap: 0.5rem;
 }
 
+#lists {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 nav button {
   border-radius: 0.5rem;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0);
   border-style: none;
   color: var(--slate12);
   text-align: left;
@@ -140,6 +145,14 @@ nav button {
 
 nav button:hover {
   background-color: var(--slate4);
+}
+
+.active {
+  background-color: var(--slate6);
+}
+
+.active:hover {
+  background-color: var(--slate7);
 }
 
 main {

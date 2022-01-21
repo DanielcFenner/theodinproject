@@ -1,5 +1,7 @@
 export default class Dom {
-  constructor(dom) {}
+  constructor(dom) {
+    this.activeList = "";
+  }
 
   static resetTodoInput() {
     const todoInput = document.querySelector('input[name="todo-input"]');
@@ -37,9 +39,34 @@ export default class Dom {
   }
 
   static renderSidebarLists(lists) {
-    for (let i = 0; i < lists.length; i++) {
-      const element = lists[i];
-      console.log(element);
+    const listsContainer = document.querySelector("#lists");
+    for (const list in lists) {
+      const button = document.createElement("button");
+      button.textContent = list;
+      listsContainer.appendChild(button);
+    }
+  }
+
+  static clearSidebarButtonActive(sidebarButtons) {
+    for (let i = 0; i < sidebarButtons.length; i++) {
+      const sidebarButton = sidebarButtons[i];
+      sidebarButton.classList.remove("active");
+    }
+  }
+
+  static addSidebarListeners(lists, activeList) {
+    const listsContainer = document.querySelector("#lists");
+    const sidebarButtons = listsContainer.childNodes;
+
+    for (let i = 0; i < sidebarButtons.length; i++) {
+      const sidebarButton = sidebarButtons[i];
+      sidebarButton.addEventListener("click", () => {
+        this.clearSidebarButtonActive(sidebarButtons);
+        this.renderClearTodos();
+        this.renderList(lists[sidebarButton.textContent]);
+        sidebarButton.classList.add("active");
+        this.activeList = sidebarButton.textContent;
+      });
     }
   }
 }
