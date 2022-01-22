@@ -8,7 +8,7 @@ export default class Dom {
     todoInput.value = "";
   }
 
-  static renderTodo(todo, lists) {
+  static renderTodo(todo, list) {
     const todoContainer = document.querySelector(".todo-container");
 
     const div = document.createElement("div");
@@ -21,15 +21,15 @@ export default class Dom {
     const remove = document.createElement("ion-icon");
     remove.name = "close-outline";
     remove.addEventListener("click", () => {
+      console.log(list);
       // find index of item in list
-      let listItemIndex = lists[this.activeList].findIndex((listItem) => {
+      let listItemIndex = list.findIndex((listItem) => {
         if (listItem.title === p.textContent) {
           return true;
         }
       });
       todoContainer.removeChild(div);
-
-      lists[this.activeList].splice(listItemIndex, 1);
+      list.splice(listItemIndex, 1);
     });
     div.appendChild(remove);
 
@@ -49,11 +49,13 @@ export default class Dom {
     }
   }
 
-  static renderList(list) {
+  static async renderList(list) {
     for (let i = 0; i < list.length; i++) {
       const element = list[i];
-      this.renderTodo(element);
+      this.renderTodo(element, list);
+      await this.waitforme(50);
     }
+    console.log("loop complte!");
   }
 
   static renderSidebarLists(lists) {
@@ -91,5 +93,13 @@ export default class Dom {
         this.activeSidebarButton();
       });
     }
+  }
+
+  static waitforme(milisec) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, milisec);
+    });
   }
 }

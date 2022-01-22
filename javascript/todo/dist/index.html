@@ -40,15 +40,17 @@
 
       <main>
         <div class="main-container">
-          <div class="new-todo">
+          <form class="new-todo" id="add-todo-form">
             <input
               name="todo-input"
               type="text"
               class="todo-input"
               placeholder="get tacos"
             />
-            <button class="add-todo">add todo</button>
-          </div>
+            <button type="submit" form="add-todo-form" class="add-todo">
+              add todo
+            </button>
+          </form>
           <div class="todo-container"></div>
         </div>
       </main>
