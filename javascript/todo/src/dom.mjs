@@ -55,7 +55,6 @@ export default class Dom {
       this.renderTodo(element, list);
       await this.waitforme(50);
     }
-    console.log("loop complte!");
   }
 
   static renderSidebarLists(lists) {

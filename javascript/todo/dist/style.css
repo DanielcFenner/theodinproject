@@ -237,6 +237,11 @@ main {
   background-color: var(--slate3);
 }
 
+#date {
+  height: 100%;
+  width: 15px;
+}
+
 ion-icon {
   cursor: pointer;
   font-size: 1.5rem;
