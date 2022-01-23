@@ -98,6 +98,7 @@ export default class Dom {
         this.renderList(lists[sidebarButton.textContent]);
         this.activeList = sidebarButton.textContent;
         this.activeSidebarButton();
+        this.renderTodoTitle();
       });
     }
   }
@@ -140,5 +141,10 @@ export default class Dom {
       this.addSidebarListeners(todoLists);
       modal.style.display = "none";
     })
+  }
+
+  static renderTodoTitle() {
+    const todoTitle = document.querySelector(".todo-title");
+    todoTitle.textContent = this.activeList;
   }
 }

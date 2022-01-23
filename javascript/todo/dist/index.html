@@ -22,7 +22,7 @@
   <div id="container">
     <header>
       <nav>
-        <h5 id="listsh5">Lists <span id="new-list">+ new list</span></h5>
+        <h5 id="listsh5">Lists <button id="new-list">+ new list</button></h5>
         <div id="lists"></div>
         <h5>Inbox</h5>
         <button>📅 Today</button>
@@ -37,6 +37,9 @@
 
     <main>
       <div class="main-container">
+        <div class="todo-title-container">
+          <h4 class="todo-title"></h4>
+        </div>
         <form class="new-todo" id="add-todo-form">
           <input name="todo-input" type="text" class="todo-input" placeholder="get tacos" />
           <button type="submit" form="add-todo-form" class="add-todo">

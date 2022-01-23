@@ -115,8 +115,7 @@ header {
 header a {
   display: flex;
   justify-content: center;
-  color: var(--slate12);
-  opacity: 0.3;
+  color: var(--slate9);
   font-size: 0.75rem;
   text-align: center;
 }
@@ -248,6 +247,7 @@ main {
 }
 
 ion-icon {
+  opacity: 1;
   cursor: pointer;
   font-size: 1.5rem;
   color: var(--slate7);
@@ -268,6 +268,7 @@ ion-icon:hover {
   text-align: center;
   font-size: 0.75rem;
   padding: 0.5rem 1rem;
+  background-color: var(--slate2);
 }
 
 #new-list:hover {
@@ -276,6 +277,7 @@ ion-icon:hover {
 
 #modal {
   position: fixed;
+  z-index: 1;
   display: none;
   justify-content: center;
   align-items: center;
@@ -332,4 +334,15 @@ ion-icon:hover {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+}
+
+.listDiv {
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border-style: none;
+  color: var(--slate12);
+  text-align: left;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--slate3);
 }

@@ -23,6 +23,7 @@ Dom.activeSidebarButton();
 Dom.newListEventListener();
 Dom.modalEventListener();
 Dom.addNewListEventListener(todoLists);
+Dom.renderTodoTitle();
 
 // add todo button event listener
 const addTodo = document.querySelector(".add-todo");
