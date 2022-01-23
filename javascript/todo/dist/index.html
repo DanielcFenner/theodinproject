@@ -15,17 +15,14 @@
 <body>
   <div id="modal">
     <form id="add-list-modal">
-      <input name="add-list-input" id="add-list-input" placeholder="🍏 Groceries">
-      <button type="submit" form="add-list-input" class="add-todo">new list</button>
+      <input name="add-list-input" id="add-list-input" placeholder="📝 List Title">
+      <button type="submit" form="add-list-modal" id="add-list-button">new list</button>
     </form>
   </div>
   <div id="container">
     <header>
       <nav>
-        <button id="new-list">
-          new list
-        </button>
-        <h5>Lists</h5>
+        <h5 id="listsh5">Lists <span id="new-list">+ new list</span></h5>
         <div id="lists"></div>
         <h5>Inbox</h5>
         <button>📅 Today</button>

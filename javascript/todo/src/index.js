@@ -20,6 +20,9 @@ Dom.renderList(todoLists[Dom.activeList]);
 Dom.renderSidebarLists(todoLists);
 Dom.addSidebarListeners(todoLists);
 Dom.activeSidebarButton();
+Dom.newListEventListener();
+Dom.modalEventListener();
+Dom.addNewListEventListener(todoLists);
 
 // add todo button event listener
 const addTodo = document.querySelector(".add-todo");

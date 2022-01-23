@@ -260,32 +260,30 @@ ion-icon:hover {
 }
 
 #new-list {
+  flex-grow: 1;
   border-radius: 0.5rem;
   cursor: pointer;
-  background: linear-gradient(45deg, var(--blue9), var(--pink9));
   border-style: none;
-  color: var(--slate12);
-  text-align: left;
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 0.75rem 1rem;
+  color: var(--slate11);
   text-align: center;
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem;
 }
 
 #new-list:hover {
-  background: linear-gradient(45deg, var(--blue10), var(--pink10));
+  background: var(--slate4);
 }
 
 #modal {
   position: fixed;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
   background-color:rgba(0, 0, 0, 0.479);
   backdrop-filter: blur(5px);
+  animation: slideup 0.25s;
 }
 
 #add-list-modal {
@@ -314,4 +312,24 @@ ion-icon:hover {
 
 #add-list-input:hover {
   background-color: var(--slate4);
+}
+
+#add-list-button {
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background: linear-gradient(45deg, var(--blue9), var(--pink9));
+  border-style: none;
+  color: var(--slate12);
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+}
+
+#listsh5 {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }

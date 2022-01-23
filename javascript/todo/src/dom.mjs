@@ -66,6 +66,14 @@ export default class Dom {
     }
   }
 
+  static renderClearSidebarLists() {
+    const listsContainer = document.querySelector("#lists").childNodes;
+    for (let i = listsContainer.length - 1; i >= 0; i--) {
+      const element = listsContainer[i];
+      element.remove();
+    }
+  }
+
   static activeSidebarButton() {
     const listsContainer = document.querySelector("#lists");
     const sidebarButtons = listsContainer.childNodes;
@@ -106,7 +114,31 @@ export default class Dom {
     const newListButton = document.querySelector("#new-list");
     const modal = document.querySelector("#modal");
     newListButton.addEventListener("click", () => {
-
+      modal.style.display = "flex";
     });
+  }
+
+  static modalEventListener() {
+    const modal = document.querySelector("#modal");
+    modal.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (e.target.id === "modal") {
+        modal.style.display = "none";
+      }
+    });
+  }
+
+  static addNewListEventListener(todoLists) {
+    const addListButton = document.querySelector("#add-list-button");
+    const modalInput = document.querySelector("#add-list-input");
+    addListButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      todoLists[modalInput.value] = [];
+      console.log(todoLists);
+      this.renderClearSidebarLists();
+      this.renderSidebarLists(todoLists);
+      this.addSidebarListeners(todoLists);
+      modal.style.display = "none";
+    })
   }
 }
