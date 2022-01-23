@@ -95,6 +95,7 @@ h5 {
 body {
   background-color: var(--slate1);
   color: var(--slate12);
+  position: relative;
 }
 
 #container {
@@ -130,6 +131,10 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+#lists-title {
+  display: flex;
 }
 
 nav button {
@@ -252,4 +257,61 @@ ion-icon {
 ion-icon:hover {
   background-color: var(--slate6);
   color: var(--slate9);
+}
+
+#new-list {
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background: linear-gradient(45deg, var(--blue9), var(--pink9));
+  border-style: none;
+  color: var(--slate12);
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+#new-list:hover {
+  background: linear-gradient(45deg, var(--blue10), var(--pink10));
+}
+
+#modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0, 0, 0, 0.479);
+  backdrop-filter: blur(5px);
+}
+
+#add-list-modal {
+  display: flex;
+  background-color: var(--slate1);
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+
+}
+
+#add-list-input {
+  display: flex;
+  flex-grow: 1;
+  background-color: var(--slate3);
+  border-radius: 0.5rem;
+  border-style: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: var(--slate12);
+}
+
+#add-list-input:focus-visible {
+  background-color: var(--slate4);
+}
+
+#add-list-input:hover {
+  background-color: var(--slate4);
 }

@@ -101,4 +101,12 @@ export default class Dom {
       }, milisec);
     });
   }
+
+  static newListEventListener() {
+    const newListButton = document.querySelector("#new-list");
+    const modal = document.querySelector("#modal");
+    newListButton.addEventListener("click", () => {
+
+    });
+  }
 }
