@@ -140,11 +140,30 @@ export default class Dom {
       this.renderSidebarLists(todoLists);
       this.addSidebarListeners(todoLists);
       modal.style.display = "none";
-    })
+    });
   }
 
   static renderTodoTitle() {
     const todoTitle = document.querySelector(".todo-title");
     todoTitle.textContent = this.activeList;
+  }
+
+  static removeListEventListener(todoLists) {
+    const removeListButton = document.querySelector("#remove-list");
+    const todoTitle = document.querySelector(".todo-title");
+
+    removeListButton.addEventListener("click", () => {
+      delete todoLists[this.activeList];
+      this.renderClearSidebarLists();
+      this.renderSidebarLists(todoLists);
+      this.addSidebarListeners(todoLists);
+
+      this.renderClearTodos();
+      this.activeList = Object.keys(todoLists)[0];
+      this.renderList(todoLists[this.activeList]);
+      this.activeSidebarButton();
+      this.renderTodoTitle();
+      console.log(todoLists[this.activeList]);
+    });
   }
 }

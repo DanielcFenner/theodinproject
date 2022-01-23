@@ -24,6 +24,7 @@ Dom.newListEventListener();
 Dom.modalEventListener();
 Dom.addNewListEventListener(todoLists);
 Dom.renderTodoTitle();
+Dom.removeListEventListener(todoLists);
 
 // add todo button event listener
 const addTodo = document.querySelector(".add-todo");

@@ -283,7 +283,7 @@ ion-icon:hover {
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color:rgba(0, 0, 0, 0.479);
+  background-color: rgba(0, 0, 0, 0.479);
   backdrop-filter: blur(5px);
   animation: slideup 0.25s;
 }
@@ -294,7 +294,6 @@ ion-icon:hover {
   gap: 0.5rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
-
 }
 
 #add-list-input {
@@ -345,4 +344,32 @@ ion-icon:hover {
   font-size: 1rem;
   padding: 0.75rem 1rem;
   background-color: var(--slate3);
+}
+
+.todo-title-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#remove-list {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--slate11);
+  padding: 0.5rem 1rem;
+  border-style: none;
+  border-radius: 0.5rem;
+  background-color: var(--slate1);
+}
+
+#remove-list:hover {
+  background-color: var(--slate3);
+}
+
+#trash-icon {
+  padding-left: 1rem;
+  color: var(--slate7);
 }

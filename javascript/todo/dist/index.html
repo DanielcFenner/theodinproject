@@ -1,57 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todo</title>
+    <script src="main.js" defer="defer"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+      defer="defer"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+      defer="defer"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>todo</title>
-  <script src="main.js" defer="defer"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer="defer"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer="defer"></script>
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <div id="modal">
-    <form id="add-list-modal">
-      <input name="add-list-input" id="add-list-input" placeholder="📝 List Title">
-      <button type="submit" form="add-list-modal" id="add-list-button">new list</button>
-    </form>
-  </div>
-  <div id="container">
-    <header>
-      <nav>
-        <h5 id="listsh5">Lists <button id="new-list">+ new list</button></h5>
-        <div id="lists"></div>
-        <h5>Inbox</h5>
-        <button>📅 Today</button>
-        <button>🕡️ This Week</button>
-        <button>🗓️ This Month</button>
-      </nav>
-      <div>
-        <h2>todo</h2>
-        <a href="https://www.danielfenner.dev" target="_blank">made by @danielfennerdev</a>
-      </div>
-    </header>
-
-    <main>
-      <div class="main-container">
-        <div class="todo-title-container">
-          <h4 class="todo-title"></h4>
+  <body>
+    <div id="modal">
+      <form id="add-list-modal">
+        <input
+          name="add-list-input"
+          id="add-list-input"
+          placeholder="📝 List Title"
+        />
+        <button type="submit" form="add-list-modal" id="add-list-button">
+          new list
+        </button>
+      </form>
+    </div>
+    <div id="container">
+      <header>
+        <nav>
+          <h5 id="listsh5">Lists <button id="new-list">+ new list</button></h5>
+          <div id="lists"></div>
+          <h5>Inbox</h5>
+          <button>📅 Today</button>
+          <button>🕡️ This Week</button>
+          <button>🗓️ This Month</button>
+        </nav>
+        <div>
+          <h2>todo</h2>
+          <a href="https://www.danielfenner.dev" target="_blank"
+            >made by @danielfennerdev</a
+          >
         </div>
-        <form class="new-todo" id="add-todo-form">
-          <input name="todo-input" type="text" class="todo-input" placeholder="get tacos" />
-          <button type="submit" form="add-todo-form" class="add-todo">
-            add todo
-          </button>
-        </form>
-        <div class="todo-container"></div>
-      </div>
-    </main>
+      </header>
 
-    <footer></footer>
-  </div>
-</body>
+      <main>
+        <div class="main-container">
+          <div class="todo-title-container">
+            <h4 class="todo-title"></h4>
+            <button id="remove-list">- delete list</button>
+          </div>
+          <form class="new-todo" id="add-todo-form">
+            <input
+              name="todo-input"
+              type="text"
+              class="todo-input"
+              placeholder="get tacos"
+            />
+            <button type="submit" form="add-todo-form" class="add-todo">
+              add todo
+            </button>
+          </form>
+          <div class="todo-container"></div>
+        </div>
+      </main>
 
+      <footer></footer>
+    </div>
+  </body>
 </html>
