@@ -151,19 +151,23 @@ export default class Dom {
   static removeListEventListener(todoLists) {
     const removeListButton = document.querySelector("#remove-list");
     const todoTitle = document.querySelector(".todo-title");
+    const addListButton = document.querySelector("#new-list");
 
     removeListButton.addEventListener("click", () => {
       delete todoLists[this.activeList];
       this.renderClearSidebarLists();
       this.renderSidebarLists(todoLists);
       this.addSidebarListeners(todoLists);
-
+      console.log(Object.keys(todoLists)[0]);
       this.renderClearTodos();
-      this.activeList = Object.keys(todoLists)[0];
-      this.renderList(todoLists[this.activeList]);
-      this.activeSidebarButton();
-      this.renderTodoTitle();
-      console.log(todoLists[this.activeList]);
+      if (Object.keys(todoLists)[0] === undefined) {
+        addListButton.click();
+      } else {
+        this.activeList = Object.keys(todoLists)[0];
+        this.renderList(todoLists[this.activeList]);
+        this.activeSidebarButton();
+        this.renderTodoTitle();
+      }
     });
   }
 }
