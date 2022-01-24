@@ -385,3 +385,14 @@ ion-icon:hover {
   padding-left: 1rem;
   color: var(--slate7);
 }
+
+.todo-right-side {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.todo-right-side p {
+  color: var(--slate11);
+  font-size: 0.75rem;
+}

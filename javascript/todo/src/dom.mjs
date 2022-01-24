@@ -1,3 +1,10 @@
+import {
+  compareAsc,
+  format,
+  formatDistanceToNow,
+  formatDistanceToNowStrict,
+} from "date-fns";
+
 export default class Dom {
   constructor(dom) {
     this.activeList = "";
@@ -18,6 +25,13 @@ export default class Dom {
     p.textContent = todo.title;
     div.appendChild(p);
 
+    const innerDiv = document.createElement("div");
+    innerDiv.classList.add("todo-right-side");
+
+    const date = document.createElement("p");
+    date.textContent = this.dateStringMaker(todo.due);
+    innerDiv.appendChild(date);
+
     const remove = document.createElement("ion-icon");
     remove.name = "close-outline";
     remove.addEventListener("click", () => {
@@ -31,7 +45,9 @@ export default class Dom {
       todoContainer.removeChild(div);
       list.splice(listItemIndex, 1);
     });
-    div.appendChild(remove);
+    innerDiv.appendChild(remove);
+
+    div.appendChild(innerDiv);
 
     todoContainer.appendChild(div);
   }
@@ -174,6 +190,22 @@ export default class Dom {
   static todoInputDate() {
     const date = document.querySelector("#date");
 
-    return date.value;
+    if (date.value === "") {
+      return new Date();
+    } else {
+      return new Date(date.value + "T12:00:00");
+    }
+  }
+
+  static dateStringMaker(date) {
+    let string = formatDistanceToNowStrict(date, { unit: "day" });
+
+    if (string === "0 days") {
+      return "Today";
+    } else if (string === "1 day") {
+      return "Tomorrow";
+    } else {
+      return string;
+    }
   }
 }
