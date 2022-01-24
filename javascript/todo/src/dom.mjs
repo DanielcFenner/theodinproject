@@ -198,11 +198,14 @@ export default class Dom {
   }
 
   static dateStringMaker(date) {
-    let string = formatDistanceToNowStrict(date, { unit: "day" });
+    let string = formatDistanceToNowStrict(date, {
+      unit: "day",
+      addSuffix: true,
+    });
 
-    if (string === "0 days") {
+    if (string === "0 days ago") {
       return "Today";
-    } else if (string === "1 day") {
+    } else if (string === "in 1 day") {
       return "Tomorrow";
     } else {
       return string;
