@@ -132,6 +132,12 @@ nav {
   gap: 0.5rem;
 }
 
+#inbox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 #lists-title {
   display: flex;
 }

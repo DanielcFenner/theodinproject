@@ -5,6 +5,9 @@ import Dom from "./dom.mjs";
 let todoLists = {
   "🍏 Groceries": [],
   "🥱 Chores": [],
+  "🕡️ Today": [],
+  "📅 This Week": [],
+  "🗓️ This Month": [],
 };
 
 Dom.activeList = "🍏 Groceries";

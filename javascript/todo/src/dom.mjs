@@ -75,10 +75,16 @@ export default class Dom {
 
   static renderSidebarLists(lists) {
     const listsContainer = document.querySelector("#lists");
+    const inboxContainer = document.querySelector("#inbox");
     for (const list in lists) {
       const button = document.createElement("button");
       button.textContent = list;
-      listsContainer.appendChild(button);
+
+      if (this.isInbox(list)) {
+        inboxContainer.appendChild(button);
+      } else {
+        listsContainer.appendChild(button);
+      }
     }
   }
 
@@ -209,6 +215,18 @@ export default class Dom {
       return "Tomorrow";
     } else {
       return string;
+    }
+  }
+
+  static isInbox(list) {
+    if (
+      list === "🕡️ Today" ||
+      list === "📅 This Week" ||
+      list === "🗓️ This Month"
+    ) {
+      return true;
+    } else {
+      return false;
     }
   }
 }
