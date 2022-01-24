@@ -185,9 +185,10 @@ main {
   border-radius: 0.5rem;
 }
 
-.new-todo input {
+.todo-input {
   display: flex;
   flex-grow: 1;
+  width: 15rem;
   background-color: var(--slate3);
   border-radius: 0.5rem;
   border-style: none;
@@ -242,8 +243,18 @@ main {
 }
 
 #date {
-  height: 100%;
-  width: 15px;
+  cursor: pointer;
+  display: flex;
+  background-color: var(--slate3);
+  border-radius: 0.5rem;
+  border-style: none;
+  padding: 0.5rem;
+  font-size: 0.75em;
+  color: var(--slate12);
+}
+
+#date:hover {
+  background-color: var(--slate4);
 }
 
 ion-icon {
@@ -353,6 +364,7 @@ ion-icon:hover {
 }
 
 #remove-list {
+  margin-top: 4px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;

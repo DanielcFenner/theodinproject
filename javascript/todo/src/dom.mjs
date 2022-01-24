@@ -150,7 +150,6 @@ export default class Dom {
 
   static removeListEventListener(todoLists) {
     const removeListButton = document.querySelector("#remove-list");
-    const todoTitle = document.querySelector(".todo-title");
     const addListButton = document.querySelector("#new-list");
 
     removeListButton.addEventListener("click", () => {
@@ -160,6 +159,7 @@ export default class Dom {
       this.addSidebarListeners(todoLists);
       console.log(Object.keys(todoLists)[0]);
       this.renderClearTodos();
+      // if there is no list
       if (Object.keys(todoLists)[0] === undefined) {
         addListButton.click();
       } else {
