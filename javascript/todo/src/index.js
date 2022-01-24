@@ -30,8 +30,11 @@ Dom.removeListEventListener(todoLists);
 const addTodo = document.querySelector(".add-todo");
 addTodo.addEventListener("click", (e) => {
   e.preventDefault();
-  let newTodo = new Todo(Dom.todoInputValue(), "hello", true);
+  let newTodo = new Todo(Dom.todoInputValue(), new Date(Dom.todoInputDate()));
   todoLists[Dom.activeList].push(newTodo);
   Dom.renderTodo(newTodo, todoLists[Dom.activeList]);
   Dom.resetTodoInput();
+  console.log(todoLists);
 });
+
+console.log(Dom.todoInputDate());

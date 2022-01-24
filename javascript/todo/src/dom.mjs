@@ -170,4 +170,10 @@ export default class Dom {
       }
     });
   }
+
+  static todoInputDate() {
+    const date = document.querySelector("#date");
+
+    return date.value;
+  }
 }
