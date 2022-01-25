@@ -1,9 +1,4 @@
-import {
-  compareAsc,
-  format,
-  formatDistanceToNow,
-  formatDistanceToNowStrict,
-} from "date-fns";
+import { formatDistanceToNowStrict } from "date-fns";
 
 export default class Dom {
   constructor(dom) {
@@ -179,6 +174,7 @@ export default class Dom {
         }
       }
       modal.style.display = "none";
+      this.localStorageSave(todoLists);
     });
   }
 
@@ -206,6 +202,7 @@ export default class Dom {
         this.activeSidebarButton();
         this.renderTodoTitle();
       }
+      this.localStorageSave(todoLists);
     });
   }
 
@@ -338,5 +335,10 @@ export default class Dom {
     div.appendChild(dateText);
 
     todoContainer.appendChild(div);
+  }
+
+  static localStorageSave(todoLists) {
+    localStorage.setItem("todoLists", JSON.stringify(todoLists));
+    console.log("saved");
   }
 }

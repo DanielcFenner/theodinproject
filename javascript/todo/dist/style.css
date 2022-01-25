@@ -404,6 +404,8 @@ ion-icon:hover {
 }
 
 .dateText {
+  display: flex;
+  align-items: center;
   color: var(--slate11);
   font-size: 0.75rem;
 }
