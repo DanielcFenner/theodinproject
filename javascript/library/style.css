@@ -262,8 +262,8 @@ input[type=submit]:hover {
     color: black;
     background: var(--sand3);
     position: absolute;
-    right: 0rem;
-    top: 0rem;
+    right: 0;
+    top: 0;
 }
 
 .card .removeButton:hover {
