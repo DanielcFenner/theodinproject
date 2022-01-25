@@ -66,6 +66,8 @@ export default class Dom {
   }
 
   static async renderList(list) {
+    this.displayRemoveListButton("show");
+    this.displayAddNewTodo("show");
     for (let i = 0; i < list.length; i++) {
       const element = list[i];
       this.renderTodo(element, list);
@@ -79,12 +81,7 @@ export default class Dom {
     for (const list in lists) {
       const button = document.createElement("button");
       button.textContent = list;
-
-      if (this.isInbox(list)) {
-        inboxContainer.appendChild(button);
-      } else {
-        listsContainer.appendChild(button);
-      }
+      listsContainer.appendChild(button);
     }
   }
 
@@ -99,12 +96,21 @@ export default class Dom {
   static activeSidebarButton() {
     const listsContainer = document.querySelector("#lists");
     const sidebarButtons = listsContainer.childNodes;
+    const inboxContainer = document.querySelector("#inbox");
+    const inboxButtons = inboxContainer.querySelectorAll("button");
 
     for (let i = 0; i < sidebarButtons.length; i++) {
       const sidebarButton = sidebarButtons[i];
       sidebarButton.classList.remove("active");
       if (this.activeList === sidebarButton.textContent) {
         sidebarButton.classList.add("active");
+      }
+    }
+    for (let i = 0; i < inboxButtons.length; i++) {
+      const inboxButton = inboxButtons[i];
+      inboxButton.classList.remove("active");
+      if (this.activeList === inboxButton.textContent) {
+        inboxButton.classList.add("active");
       }
     }
   }
@@ -154,13 +160,24 @@ export default class Dom {
   static addNewListEventListener(todoLists) {
     const addListButton = document.querySelector("#add-list-button");
     const modalInput = document.querySelector("#add-list-input");
+    const listButtons = document.querySelector("#lists").childNodes;
+
     addListButton.addEventListener("click", (e) => {
       e.preventDefault();
       todoLists[modalInput.value] = [];
-      console.log(todoLists);
+      this.activeList = modalInput.value;
+
       this.renderClearSidebarLists();
       this.renderSidebarLists(todoLists);
       this.addSidebarListeners(todoLists);
+
+      for (let i = 0; i < listButtons.length; i++) {
+        const listButton = listButtons[i];
+
+        if (listButton.textContent === modalInput.value) {
+          listButton.click();
+        }
+      }
       modal.style.display = "none";
     });
   }
@@ -179,7 +196,6 @@ export default class Dom {
       this.renderClearSidebarLists();
       this.renderSidebarLists(todoLists);
       this.addSidebarListeners(todoLists);
-      console.log(Object.keys(todoLists)[0]);
       this.renderClearTodos();
       // if there is no list
       if (Object.keys(todoLists)[0] === undefined) {
@@ -228,5 +244,99 @@ export default class Dom {
     } else {
       return false;
     }
+  }
+
+  static addInboxEventListeners(todoLists, inboxLists) {
+    const inboxContainer = document.querySelector("#inbox");
+    const inboxButtons = inboxContainer.childNodes;
+
+    for (let i = 0; i < inboxButtons.length; i++) {
+      const inboxButton = inboxButtons[i];
+      inboxButton.addEventListener("click", () => {
+        this.renderClearTodos();
+        this.updateInboxLists(todoLists, inboxLists);
+        this.renderInboxList(inboxLists[inboxButton.textContent]);
+        this.activeList = inboxButton.textContent;
+        this.activeSidebarButton();
+        this.displayRemoveListButton("hide");
+        this.renderTodoTitle();
+      });
+    }
+  }
+
+  static displayRemoveListButton(str) {
+    const removeListButton = document.querySelector("#remove-list");
+    if (str === "show") {
+      removeListButton.style.display = "flex";
+    } else if (str === "hide") {
+      removeListButton.style.display = "none";
+    }
+  }
+
+  static displayAddNewTodo(str) {
+    const addNewTodoForm = document.querySelector("#add-todo-form");
+    if (str === "show") {
+      addNewTodoForm.style.display = "flex";
+    } else if (str === "hide") {
+      addNewTodoForm.style.display = "none";
+    }
+  }
+
+  static updateInboxLists(todoList, inboxList) {
+    for (const key in inboxList) {
+      const awefwf = inboxList[key];
+      awefwf.length = 0;
+    }
+
+    const listsKeys = Object.keys(todoList);
+    let listsArray = [];
+    for (let i = 0; i < listsKeys.length; i++) {
+      const key = listsKeys[i];
+      listsArray = listsArray.concat(todoList[key]);
+    }
+
+    for (let i = 0; i < listsArray.length; i++) {
+      let todo = listsArray[i];
+      let howLong = parseInt(
+        formatDistanceToNowStrict(todo.due, { unit: "day" }).slice(0, 1)
+      );
+
+      if (howLong === 0) {
+        inboxList["🕡️ Today"].push(todo);
+      } else if (howLong >= 1 || howLong <= 7) {
+        inboxList["📅 This Week"].push(todo);
+      } else if (howLong >= 8 || howLong <= 30) {
+        inboxList["🗓️ This Month"].push(todo);
+      }
+    }
+  }
+
+  static async renderInboxList(inboxList) {
+    this.displayRemoveListButton("hide");
+    this.displayAddNewTodo("hide");
+
+    for (let i = 0; i < inboxList.length; i++) {
+      const element = inboxList[i];
+      this.renderInboxTodo(element, inboxList);
+      await this.waitforme(50);
+    }
+  }
+
+  static renderInboxTodo(todo) {
+    const todoContainer = document.querySelector(".todo-container");
+
+    const div = document.createElement("div");
+    div.classList.add("todo-element");
+
+    const p = document.createElement("p");
+    p.textContent = todo.title;
+    div.appendChild(p);
+
+    const dateText = document.createElement("p");
+    dateText.textContent = this.dateStringMaker(todo.due);
+    dateText.classList.add("dateText");
+    div.appendChild(dateText);
+
+    todoContainer.appendChild(div);
   }
 }

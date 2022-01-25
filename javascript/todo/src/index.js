@@ -5,6 +5,9 @@ import Dom from "./dom.mjs";
 let todoLists = {
   "🍏 Groceries": [],
   "🥱 Chores": [],
+};
+
+let inboxLists = {
   "🕡️ Today": [],
   "📅 This Week": [],
   "🗓️ This Month": [],
@@ -28,6 +31,7 @@ Dom.modalEventListener();
 Dom.addNewListEventListener(todoLists);
 Dom.renderTodoTitle();
 Dom.removeListEventListener(todoLists);
+Dom.addInboxEventListeners(todoLists, inboxLists);
 
 // add todo button event listener
 const addTodo = document.querySelector(".add-todo");

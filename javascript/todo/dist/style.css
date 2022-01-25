@@ -402,3 +402,8 @@ ion-icon:hover {
   color: var(--slate11);
   font-size: 0.75rem;
 }
+
+.dateText {
+  color: var(--slate11);
+  font-size: 0.75rem;
+}
