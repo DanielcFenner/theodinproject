@@ -2,6 +2,9 @@
 
 This is a repo where I'm going through The Odin Project tutorial series. Find it over at https://www.theodinproject.com
 
+### Todo - Webpack + OOP 
+https://danielcfenner.github.io/theodinproject/javascript/todo/dist/
+
 ### Catnip Cafe - Webpack basics
 https://danielcfenner.github.io/theodinproject/javascript/restaurant-page/dist/
 
