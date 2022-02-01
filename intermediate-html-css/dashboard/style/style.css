@@ -44,6 +44,51 @@
   --slate12: hsl(206 24% 9%);
   font-family: "Poppins", sans-serif;
   font-size: 16px;
+  --theme-name: "light";
+  color: var(--slate12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --blue1: hsl(212 35% 9.2%);
+    --blue2: hsl(216 50% 11.8%);
+    --blue3: hsl(214 59.4% 15.3%);
+    --blue4: hsl(214 65.8% 17.9%);
+    --blue5: hsl(213 71.2% 20.2%);
+    --blue6: hsl(212 77.4% 23.1%);
+    --blue7: hsl(211 85.1% 27.4%);
+    --blue8: hsl(211 89.7% 34.1%);
+    --blue9: hsl(206 100% 50%);
+    --blue10: hsl(209 100% 60.6%);
+    --blue11: hsl(210 100% 66.1%);
+    --blue12: hsl(206 98% 95.8%);
+
+    --pink1: hsl(318 25% 9.6%);
+    --pink2: hsl(319 32.2% 11.6%);
+    --pink3: hsl(319 41% 16%);
+    --pink4: hsl(320 45.4% 18.7%);
+    --pink5: hsl(320 49% 21.1%);
+    --pink6: hsl(321 53.6% 24.4%);
+    --pink7: hsl(321 61.1% 29.7%);
+    --pink8: hsl(322 74.9% 37.5%);
+    --pink9: hsl(322 65% 54.5%);
+    --pink10: hsl(323 72.8% 59.2%);
+    --pink11: hsl(325 90% 66.4%);
+    --pink12: hsl(322 90% 95.8%);
+
+    --slate1: hsl(200 7% 8.8%);
+    --slate2: hsl(195 7.1% 11%);
+    --slate3: hsl(197 6.8% 13.6%);
+    --slate4: hsl(198 6.6% 15.8%);
+    --slate5: hsl(199 6.4% 17.9%);
+    --slate6: hsl(201 6.2% 20.5%);
+    --slate7: hsl(203 6% 24.3%);
+    --slate8: hsl(207 5.6% 31.6%);
+    --slate9: hsl(206 6% 43.9%);
+    --slate10: hsl(206 5.2% 49.5%);
+    --slate11: hsl(206 6% 63%);
+    --slate12: hsl(210 6% 93%);
+  }
 }
 
 body {
@@ -75,6 +120,7 @@ body {
   gap: 0.5rem;
   padding: 1rem;
   font-weight: 700;
+  color: white;
 }
 
 nav {
@@ -87,7 +133,7 @@ nav > button {
   gap: 0.5rem;
   padding: 1rem;
   text-align: left;
-  color: var(--slate1);
+  color: white;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 0.5rem;
   border-style: none;
@@ -181,8 +227,88 @@ i {
 
 main {
   background-color: var(--slate3);
+  padding: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.content {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+  display: grid;
+  gap: 1rem;
+  background-color: var(--slate1);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card p {
+  color: var(--slate11);
+}
+
+.card-buttons {
+  cursor: pointer;
+  display: flex;
+  font-size: 1.25rem;
+  gap: 1rem;
+  justify-self: flex-end;
 }
 
 aside {
-  background-color: var(--pink5);
+  background-color: var(--slate3);
+  padding: 1rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+}
+
+.anouncements-card {
+  display: grid;
+  gap: 1rem;
+  background-color: var(--slate1);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.anouncements-card > p {
+  color: var(--slate11);
+}
+
+.trending-card {
+  display: grid;
+  gap: 1rem;
+  background-color: var(--slate1);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.trending-names > p {
+  color: var(--slate11);
+  font-size: 0.75rem;
+}
+
+.trending-element {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.trending-names {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.trending-profile {
+  height: 40px;
+  width: 40px;
+  border-radius: 999px;
+  background-color: var(--pink9);
 }
