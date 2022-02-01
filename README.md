@@ -3,6 +3,9 @@
 This is a repo where I'm going through The Odin Project tutorial series. Find it over at https://www.theodinproject.com
 
 ### Sign-up Form - Intermediate HTML + CSS
+https://danielcfenner.github.io/theodinproject/intermediate-html-css/dashboard
+
+### Sign-up Form - Intermediate HTML + CSS
 https://danielcfenner.github.io/theodinproject/intermediate-html-css/sign-up-form
 
 ### Todo - Webpack + OOP 
