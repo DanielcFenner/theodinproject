@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+:root {
+  --pink1: hsl(322 100% 99.4%);
+  --pink2: hsl(323 100% 98.4%);
+  --pink3: hsl(323 86.3% 96.5%);
+  --pink4: hsl(323 78.7% 94.2%);
+  --pink5: hsl(323 72.2% 91.1%);
+  --pink6: hsl(323 66.3% 86.6%);
+  --pink7: hsl(323 62% 80.1%);
+  --pink8: hsl(323 60.3% 72.4%);
+  --pink9: hsl(322 65% 54.5%);
+  --pink10: hsl(322 63.9% 50.7%);
+  --pink11: hsl(322 75% 46%);
+  --pink12: hsl(320 70% 13.5%);
+  --blue1: hsl(206 100% 99.2%);
+  --blue2: hsl(210 100% 98%);
+  --blue3: hsl(209 100% 96.5%);
+  --blue4: hsl(210 98.8% 94%);
+  --blue5: hsl(209 95% 90.1%);
+  --blue6: hsl(209 81.2% 84.5%);
+  --blue7: hsl(208 77.5% 76.9%);
+  --blue8: hsl(206 81.9% 65.3%);
+  --blue9: hsl(206 100% 50%);
+  --blue10: hsl(208 100% 47.3%);
+  --blue11: hsl(211 100% 43.2%);
+  --blue12: hsl(211 100% 15%);
+  --slate1: hsl(206 30% 98.8%);
+  --slate2: hsl(210 16.7% 97.6%);
+  --slate3: hsl(209 13.3% 95.3%);
+  --slate4: hsl(209 12.2% 93.2%);
+  --slate5: hsl(208 11.7% 91.1%);
+  --slate6: hsl(208 11.3% 88.9%);
+  --slate7: hsl(207 11.1% 85.9%);
+  --slate8: hsl(205 10.7% 78%);
+  --slate9: hsl(206 6% 56.1%);
+  --slate10: hsl(206 5.8% 52.3%);
+  --slate11: hsl(206 6% 43.5%);
+  --slate12: hsl(206 24% 9%);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--slate1);
+}
+
+#container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-auto-rows: auto;
+}
+
+.sidebar {
+  padding: 1rem;
+  display: grid;
+  color: var(--blue1);
+  grid-column: 1;
+  grid-row: 1 / 3;
+  gap: 3rem;
+  background-color: var(--blue9);
+}
+
+nav {
+  justify-content: center;
+  display: grid;
+  grid-column: 1;
+  gap: 1rem;
+}
+
+header {
+  display: grid;
+  justify-content: center;
+  background-color: var(--slate10);
+  grid-column: 2 / -1;
+}
+
+main {
+  background-color: var(--blue4);
+}
+
+aside {
+  background-color: var(--pink5);
+}
