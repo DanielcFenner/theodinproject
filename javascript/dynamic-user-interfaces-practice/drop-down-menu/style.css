@@ -1,0 +1,12 @@
+.dropdown {
+  display: flex;
+  flex-direction: column;
+
+  cursor: pointer;
+  background-color: red;
+  animation: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+}
+
+.dropdown > button:nth-child(n + 2) {
+  display: none;
+}
