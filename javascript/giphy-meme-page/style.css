@@ -1,0 +1,18 @@
+body {
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+
+  gap: 2rem;
+  border-radius: 0.5rem;
+  height: 50vh;
+}
+
+img {
+  grid-column: 4/ 10;
+  width: 100%;
+}
+
+button {
+  grid-column: span 12;
+  padding: 1rem;
+}
