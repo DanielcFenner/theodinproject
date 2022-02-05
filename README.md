@@ -2,6 +2,9 @@
 
 This is a repo where I'm going through The Odin Project tutorial series. Find it over at https://www.theodinproject.com
 
+### Weather app - APIs + async/await
+https://danielcfenner.github.io/theodinproject/javascript/weather-app
+
 ### Sign-up Form - Intermediate HTML + CSS
 https://danielcfenner.github.io/theodinproject/intermediate-html-css/dashboard
 
