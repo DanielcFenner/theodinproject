@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: "Roboto", sans-serif;
+  --blue1: hsl(206 100% 99.2%);
+  --blue2: hsl(210 100% 98%);
+  --blue3: hsl(209 100% 96.5%);
+  --blue4: hsl(210 98.8% 94%);
+  --blue5: hsl(209 95% 90.1%);
+  --blue6: hsl(209 81.2% 84.5%);
+  --blue7: hsl(208 77.5% 76.9%);
+  --blue8: hsl(206 81.9% 65.3%);
+  --blue9: hsl(206 100% 50%);
+  --blue10: hsl(208 100% 47.3%);
+  --blue11: hsl(211 100% 43.2%);
+  --blue12: hsl(211 100% 15%);
+  --pink1: hsl(322 100% 99.4%);
+  --pink2: hsl(323 100% 98.4%);
+  --pink3: hsl(323 86.3% 96.5%);
+  --pink4: hsl(323 78.7% 94.2%);
+  --pink5: hsl(323 72.2% 91.1%);
+  --pink6: hsl(323 66.3% 86.6%);
+  --pink7: hsl(323 62% 80.1%);
+  --pink8: hsl(323 60.3% 72.4%);
+  --pink9: hsl(322 65% 54.5%);
+  --pink10: hsl(322 63.9% 50.7%);
+  --pink11: hsl(322 75% 46%);
+  --pink12: hsl(320 70% 13.5%);
+  --slate1: hsl(206 30% 98.8%);
+  --slate2: hsl(210 16.7% 97.6%);
+  --slate3: hsl(209 13.3% 95.3%);
+  --slate4: hsl(209 12.2% 93.2%);
+  --slate5: hsl(208 11.7% 91.1%);
+  --slate6: hsl(208 11.3% 88.9%);
+  --slate7: hsl(207 11.1% 85.9%);
+  --slate8: hsl(205 10.7% 78%);
+  --slate9: hsl(206 6% 56.1%);
+  --slate10: hsl(206 5.8% 52.3%);
+  --slate11: hsl(206 6% 43.5%);
+  --slate12: hsl(206 24% 9%);
+  --fullspan: span 2;
+}
+
+body {
+  background-color: var(--blue1);
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: min(80ch, 100%);
+}
+
+header {
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 700;
+  padding: 1rem;
+  font-size: 2rem;
+  color: var(--blue1);
+  grid-column: var(--fullspan);
+  background-color: var(--blue9);
+}
+
+header i {
+  font-size: 3rem;
+}
+
+.line1 {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: solid 1px;
+  border-color: var(--slate9);
+}
+
+form {
+  padding: 0rem 1rem;
+}
+
+.line2 {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: solid 1px;
+  border-color: var(--slate9);
+}
+
+.formSubmit {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(60deg, var(--blue9), var(--pink9));
+  border-radius: 0.5rem;
+  border: none;
+  color: var(--slate1);
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
