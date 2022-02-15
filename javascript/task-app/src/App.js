@@ -4,12 +4,13 @@ import Overview from "./components/Overview";
 function App() {
   const [tasks, setTasks] = React.useState([]);
   const [formData, setFormData] = React.useState({
+    id: 0,
     text: "",
   });
 
   function submit(event) {
     event.preventDefault();
-    setTasks((oldTasks) => [...oldTasks, formData.text]);
+    setTasks((oldTasks) => [...oldTasks, { id: idGen(), text: formData.text }]);
   }
 
   function handleChange(event) {
@@ -17,6 +18,12 @@ function App() {
     setFormData((oldFormData) => {
       return { ...oldFormData, [name]: value };
     });
+  }
+
+  function deleteTask() {}
+
+  function idGen() {
+    return Math.floor(Math.random() * 99999999999999);
   }
 
   return (
