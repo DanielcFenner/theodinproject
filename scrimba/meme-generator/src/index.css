@@ -89,7 +89,6 @@ header i {
 }
 
 .form {
-  padding: 0rem 1rem;
 }
 
 .line2 {
@@ -114,4 +113,33 @@ header i {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.meme {
+  position: relative;
+}
+
+.meme img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.meme--text {
+  font-size: 2rem;
+  color: var(--slate1);
+  border: 1px black;
+  position: absolute;
+  text-align: center;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+  text-transform: uppercase;
+  padding: 0.5rem 0rem;
+  width: 700px;
+}
+
+.top {
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
 }
