@@ -20,7 +20,9 @@ function App() {
     });
   }
 
-  function deleteTask() {}
+  function deleteTask(taskid) {
+    setTasks((oldTasks) => oldTasks.filter((oldTask) => oldTask.id !== taskid));
+  }
 
   function idGen() {
     return Math.floor(Math.random() * 99999999999999);
@@ -32,7 +34,7 @@ function App() {
         <input type="text" name="text" onChange={handleChange}></input>
         <button>submit</button>
       </form>
-      <Overview tasks={tasks} />
+      <Overview tasks={tasks} deleteTask={deleteTask} />
     </div>
   );
 }
