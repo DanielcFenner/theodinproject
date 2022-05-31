@@ -2,6 +2,7 @@
   "name": "poke-memory-card",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://danielcfenner.github.io/theodinproject/javascript/memory_game/build",
   "dependencies": {
     "@radix-ui/colors": "^0.1.8",
     "@testing-library/jest-dom": "^5.16.2",
