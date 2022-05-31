@@ -4,6 +4,7 @@ This is a repo where I'm going through The Odin Project tutorial series. Find it
 
 ### Pokemon Memory Game - React fundamentals
 https://danielcfenner.github.io/theodinproject/javascript/memory_game
+
 live site: https://pokemon-memory-danielfennerdev.netlify.app/
 
 ### Weather app - APIs + async/await
