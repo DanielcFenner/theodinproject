@@ -1,0 +1,21 @@
+header {
+  color: var(--blue1);
+  background-color: var(--blue12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  align-items: center;
+}
+
+a {
+  all: unset;
+  align-self: center;
+  padding: 0rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+}
+
+a:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,58 @@
+@keyframes popin {
+  from {
+    transform: translate(0px, 50px);
+    opacity: 0%;
+  }
+  to {
+    transform: translate(0px, 0px);
+    opacity: 100%;
+  }
+}
+
+p {
+  padding: 0rem 1rem;
+}
+
+.gameContainer {
+  width: min(100%, 1000px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0rem;
+  padding-top: 1rem;
+}
+
+.pokemonGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem 1rem;
+}
+
+.pokemonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: var(--blue3);
+  border-radius: 0.5rem;
+  color: var(--blue12);
+  animation: popin;
+  animation-duration: 0.5s;
+}
+
+.pokemonContainer:hover {
+  cursor: pointer;
+  background-color: var(--blue4);
+}
+
+img {
+  width: 100%;
+}
+
+@media only screen and (min-width: 800px) {
+  .pokemonGrid {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
