@@ -38,6 +38,7 @@ p {
   background-color: var(--blue3);
   border-radius: 0.5rem;
   color: var(--blue12);
+  text-transform: capitalize;
   animation: popin;
   animation-duration: 0.5s;
 }

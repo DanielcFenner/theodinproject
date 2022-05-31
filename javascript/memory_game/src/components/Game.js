@@ -2,7 +2,7 @@ import React from "react";
 import "./Game.css";
 
 export default function Game() {
-  const [level, setLevel] = React.useState(0);
+  const [level, setLevel] = React.useState(1);
   const [pokemon, setPokemon] = React.useState([]);
   const [guesses, setGuesses] = React.useState([]);
 
@@ -17,10 +17,10 @@ export default function Game() {
   React.useEffect(() => {
     shufflePokemon();
     if (!guessCheck(guesses)) {
-      setLevel(0);
+      setLevel(1);
     }
 
-    if (guessCheck(guesses) && guesses.length === level + 1) {
+    if (guessCheck(guesses) && guesses.length === level) {
       setLevel((oldIndex) => {
         let newIndex = oldIndex + 1;
         return newIndex;
@@ -58,7 +58,7 @@ export default function Game() {
     function () {
       setPokemon([]);
       setGuesses([]);
-      for (let i = 0; i < level + 1; i++) {
+      for (let i = 0; i < level; i++) {
         fetch("https://pokeapi.co/api/v2/pokemon/" + randomPoke())
           .then((res) => res.json())
           .then((data) => setPokemon((oldPokemon) => [...oldPokemon, data]));
@@ -87,7 +87,7 @@ export default function Game() {
     <div className="gameContainer">
       <h4>Level {level}</h4>
       <h4>
-        Guesses {guesses.length} / {level + 1}
+        Guesses {guesses.length} / {level}
       </h4>
       <p>
         To get through each round you need to click every pokemon without
