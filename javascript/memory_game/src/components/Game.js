@@ -12,10 +12,10 @@ export default function Game() {
 
   function guess(id) {
     setGuesses((oldGuesses) => [...oldGuesses, id]);
+    shufflePokemon();
   }
 
   React.useEffect(() => {
-    shufflePokemon();
     if (!guessCheck(guesses)) {
       setLevel(1);
     }
