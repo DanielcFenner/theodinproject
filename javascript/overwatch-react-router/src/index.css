@@ -1,0 +1,7 @@
+@import "@radix-ui/colors/blue.css";
+
+body {
+  background-color: var(--blue1);
+  color: var(--blue12);
+  font-family: sans-serif;
+}
