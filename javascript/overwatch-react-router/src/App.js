@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <h3>Platform</h3>
-      <div>
+      <div className="buttons">
         <Link to="/pc">
           <button>PC</button>
         </Link>

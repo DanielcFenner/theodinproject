@@ -5,3 +5,20 @@ body {
   color: var(--blue12);
   font-family: sans-serif;
 }
+
+button {
+  all: unset;
+  background-color: var(--blue9);
+  color: var(--blue1);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-decoration: none;
+}
+button:hover {
+  background-color: var(--blue10);
+  cursor: pointer;
+}
+
+a {
+  all: unset;
+}

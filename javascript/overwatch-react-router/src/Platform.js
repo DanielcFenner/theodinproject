@@ -6,7 +6,7 @@ function Platform() {
   return (
     <div className="App">
       <h3>Region</h3>
-      <div>
+      <div className="buttons">
         <Link to="us">
           <button>US</button>
         </Link>

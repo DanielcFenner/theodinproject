@@ -5,7 +5,8 @@ import React from "react";
 function Tag() {
   let params = useParams();
 
-  const [player, setPlayer] = React.useState({});
+  const [player, setPlayer] = React.useState(null);
+  const [loading, setLoading] = React.useState(true);
 
   async function fetchPlayer() {
     const fetchPlayer = await fetch(
@@ -13,24 +14,30 @@ function Tag() {
     );
     const player = await fetchPlayer.json();
     setPlayer(player);
+    setLoading(false);
   }
 
   React.useEffect(() => {
     fetchPlayer();
   }, []);
 
+  if (loading) {
+    return <h1>Loading</h1>;
+  }
+
   return (
     <div className="App">
       <h3>{player.username}</h3>
-
       <img src={player.portrait}></img>
-      <h3>rank</h3>
-      <h4>tank</h4>
-      <p>rank {player.competitive.tank.rank}</p>
-      <h4>damage</h4>
-      <p>rank {player.competitive.damage.rank}</p>
-      <h4>support</h4>
-      <p>rank {player.competitive.support.rank}</p>
+      <p>
+        <strong>tank</strong> rank {player.competitive.tank.rank}
+      </p>
+      <p>
+        <strong>damage</strong> rank {player.competitive.damage.rank}
+      </p>
+      <p>
+        <strong>support</strong> rank {player.competitive.support.rank}
+      </p>
       <div></div>
     </div>
   );
