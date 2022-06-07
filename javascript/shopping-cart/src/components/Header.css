@@ -1,0 +1,22 @@
+header {
+  color: var(--blue12);
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.headerColor {
+  background-color: var(--blue1);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
