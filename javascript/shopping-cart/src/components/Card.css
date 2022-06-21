@@ -1,0 +1,34 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  gap: 0.5rem;
+}
+
+.card img {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+h4 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.card button {
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.card button:hover {
+  cursor: pointer;
+}
