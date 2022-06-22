@@ -10,8 +10,6 @@ https://danielcfenner.github.io/theodinproject/javascript/shopping-cart
 
 https://danielcfenner.github.io/theodinproject/javascript/memory_game
 
-live site: https://pokemon-memory-danielfennerdev.netlify.app/
-
 ### Weather app - APIs + async/await
 
 https://danielcfenner.github.io/theodinproject/javascript/weather-app
