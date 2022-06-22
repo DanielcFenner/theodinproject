@@ -16,6 +16,7 @@ body {
   flex-direction: column;
   padding: 0.5rem;
   width: min(80ch, 100%);
+  gap: 1rem;
 }
 
 a {

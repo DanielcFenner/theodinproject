@@ -8,9 +8,35 @@ import cats from "./components/Cats";
 function RouteSwitch() {
   const [cart, setCart] = React.useState([]);
 
-  function handleAddCat(catid) {
-    console.log(catid);
-  }
+  const handleAddCat = (catid) => {
+    const ProductExist = cart.find((item) => item.id === catid.id);
+    if (ProductExist) {
+      setCart(
+        cart.map((item) =>
+          item.id === catid.id
+            ? { ...ProductExist, quantity: ProductExist.quantity + 1 }
+            : item
+        )
+      );
+    } else {
+      setCart([...cart, { ...catid, quantity: 1 }]);
+    }
+  };
+
+  const handleRemoveCat = (catid) => {
+    const ProductExist = cart.find((item) => item.id === catid.id);
+    if (ProductExist) {
+      setCart(
+        cart.map((item) =>
+          item.id === catid.id
+            ? { ...ProductExist, quantity: ProductExist.quantity - 1 }
+            : item
+        )
+      );
+    } else {
+      setCart([...cart, { ...catid, quantity: 1 }]);
+    }
+  };
 
   return (
     <BrowserRouter>
@@ -20,7 +46,17 @@ function RouteSwitch() {
           path="/shop"
           element={<Shop cart={cart} cats={cats} handleAddCat={handleAddCat} />}
         />
-        <Route path="/cart" element={<Cart cart={cart} cats={cats} />} />
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cart={cart}
+              cats={cats}
+              handleAddCat={handleAddCat}
+              handleRemoveCat={handleRemoveCat}
+            />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

@@ -24,8 +24,8 @@ const item = {
   },
 };
 
-function Shop(props) {
-  const gridItems = props.cats.map((cat) => {
+function Shop({ cats, cart, handleAddCat }) {
+  const gridItems = cats.map((cat) => {
     return (
       <motion.div key={cat.id} className="item" variants={item}>
         <Card
@@ -34,7 +34,7 @@ function Shop(props) {
           image={cat.image}
           text={cat.text}
           price={cat.price}
-          handleAddCat={cat.handleAddCat}
+          handleAddCat={handleAddCat}
         />
       </motion.div>
     );
@@ -42,7 +42,8 @@ function Shop(props) {
 
   return (
     <div className="app">
-      <Header />
+      <Header cart={cart} />
+
       <div className="container">
         <h1>Shop</h1>
         <motion.div

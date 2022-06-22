@@ -19,5 +19,12 @@ header {
 
 nav {
   display: flex;
+  align-items: center;
   gap: 1rem;
+}
+
+.cartAmount {
+  background-color: var(--blue9);
+  padding: 0.5rem;
+  border-radius: 9999px;
 }

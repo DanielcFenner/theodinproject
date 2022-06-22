@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import homeCat from "./images/homecat.avif";
 import { motion } from "framer-motion";
 
-function App(props) {
+function App({ cart }) {
   const variants = {
     hidden: {
       opacity: 0,
@@ -16,10 +16,12 @@ function App(props) {
       y: 0,
     },
   };
+  console.log(cart);
 
   return (
     <div className="app">
-      <Header />
+      <Header cart={cart} />
+
       <motion.div
         className="heroContainer"
         variants={variants}
