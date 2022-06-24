@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+:root {
+  --purple1: hsl(280, 65%, 99.4%);
+  --purple2: hsl(276, 100%, 99%);
+  --purple3: hsl(276, 83.1%, 97%);
+  --purple4: hsl(275, 76.4%, 94.7%);
+  --purple5: hsl(275, 70.8%, 91.8%);
+  --purple6: hsl(274, 65.4%, 87.8%);
+  --purple7: hsl(273, 61%, 81.7%);
+  --purple8: hsl(272, 60%, 73.5%);
+  --purple9: hsl(272, 51%, 54%);
+  --purple10: hsl(272, 46.8%, 50.3%);
+  --purple11: hsl(272, 50%, 45.8%);
+  --purple12: hsl(272, 66%, 16%);
+  box-sizing: border-box;
+}
+body {
+  max-width: min(80ch, 100%);
+  margin: 2rem auto;
+  padding: 0rem 1rem;
+  font-family: "Inter", sans-serif;
+  background-color: var(--purple1);
+  box-sizing: border-box;
+}
+p,
+h1,
+h2,
+h3,
+a,
+ul {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: var(--purple12);
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--purple3);
+  text-transform: uppercase;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-end;
+}
+nav li {
+  list-style-type: none;
+  margin-left: 20p;
+}
+nav h1 {
+  font-size: 3rem;
+}
+nav p,
+nav a {
+  color: var(--purple9);
+  font-weight: 400;
+}
+footer {
+  color: var(--purple9);
+  text-align: center;
+  margin: 80px auto 20px;
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+h3 {
+  text-transform: capitalize;
+  margin-bottom: 8px;
+}
+.create-blog form {
+  margin: 0 auto;
+}
+.create-blog input,
+.create-blog,
+textarea {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.create-blog input {
+  padding: 0.5rem 0rem;
+}
+.create-blog label {
+  display: block;
+}
+textarea {
+  height: 120px;
+}
+.create-blog button {
+  margin-top: 20px;
+  background-color: var(--purple9);
+  color: var(--purple1);
+  padding: 1rem;
+  border: 0;
+  font-size: 0.8rem;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Ubunutu", sans-serif;
+  border-radius: 0.5rem;
+}
+.create-blog button:hover {
+  background-color: var(--purple11);
+}
+.blogs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.blogContainer {
+  background-color: var(--purple3);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--purple4);
+  color: var(--purple9);
+  padding: 1rem;
+  border: 0;
+  font-size: 0.8rem;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Ubunutu", sans-serif;
+  border-radius: 0.5rem;
+  flex-grow: 0;
+}
+.delete:hover {
+  background-color: var(--purple5);
+}
+.details {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.blogContainer:hover {
+  background-color: var(--purple4);
+}
+.subtitle {
+  font-size: 0.75rem;
+}
