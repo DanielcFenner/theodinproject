@@ -1,0 +1,22 @@
+<h1>{{title}}</h1>
+
+<ul>
+  {{#each bookinstance_list}}
+    <li>
+      <a href={{this.url}}>{{this.book.title}} : {{this.imprint}}</a>
+      {{#ifeq this.status "Available"}}
+        <span>{{this.status}}</span>
+      {{/ifeq}}
+      {{#ifeq this.status "Maintenance"}}
+        <span>{{this.status}} Due: {{this.due_back_formatted}}</span>
+      {{/ifeq}}
+      {{#ifeq this.status "Loaned"}}
+        <span>{{this.status}} Due: {{this.due_back_formatted}}</span>
+      {{/ifeq}}
+
+    </li>
+  {{else}}
+    <p>There are no copies in this library</p>
+
+  {{/each}}
+</ul>
