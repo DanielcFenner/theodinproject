@@ -1,0 +1,13 @@
+<h1>ID: {{bookinstance._id}}</h1>
+
+<p><strong>Title: </strong><a
+    href={{bookinstance.book.url}}
+  >{{bookinstance.book.title}}</a></p>
+<p><strong>Imprint: </strong>{{bookinstance.imprint}}</p>
+
+<p><strong>Status: </strong>
+  {{bookinstance.status}}
+
+</p>
+
+<p><strong>Due back: </strong>{{bookinstance.due_back_formatted}}</p>
