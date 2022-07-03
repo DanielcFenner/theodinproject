@@ -1,0 +1,11 @@
+<h1>{{this.name}}</h1>
+
+<div>
+  <h3>Books</h3>
+  <div>
+    {{#each genre_books}}
+      <a href={{this.url}}>{{this.title}}</a>
+      <p>{{this.summary}}</p>
+    {{/each}}
+  </div>
+</div>
