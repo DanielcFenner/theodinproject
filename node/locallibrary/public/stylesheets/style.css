@@ -3,3 +3,22 @@
   padding: 0;
   list-style: none;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+}
+
+nav button {
+  width: 100%;
+}
+
+.content {
+  grid-column: span 3;
+}

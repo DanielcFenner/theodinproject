@@ -20,27 +20,22 @@
   </head>
 
   <body>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-2">
-          <ul class="sidebar-nav">
-            <li><a href="/catalog">Home</a></li>
-            <li><a href="/catalog/books">All books</a></li>
-            <li><a href="/catalog/authors">All authors</a></li>
-            <li><a href="/catalog/genres">All genres</a></li>
-            <li><a href="/catalog/bookinstances">All book-instances</a></li>
-            <li>
-              <hr />
-            </li>
-            <li><a href="/catalog/author/create">Create new author</a></li>
-            <li><a href="/catalog/genre/create">Create new genre</a></li>
-            <li><a href="/catalog/book/create">Create new book</a></li>
-            <li><a href="/catalog/bookinstance/create">Create new book
-                instance (copy)</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-10">{{{body}}}</div>
-      </div>
+    <div class="container">
+      <nav>
+        <h4>Explore</h4>
+        <a href="/catalog"><button>Home</button></a>
+        <a href="/catalog/books"><button>All books</button></a>
+        <a href="/catalog/authors"><button>All authors</button></a>
+        <a href="/catalog/genres"><button>All genres</button></a>
+        <a href="/catalog/bookinstances"><button>All book-instances</button></a>
+        <h4>Create</h4>
+        <a href="/catalog/author/create"><button>Create author</button></a>
+        <a href="/catalog/genre/create"><button>Create genre</button></a>
+        <a href="/catalog/book/create"><button>Create book</button></a>
+        <a href="/catalog/bookinstance/create"><button>Create book
+            instance (copy)</button></a>
+      </nav>
+      <div class="content">{{{body}}}</div>
     </div>
 
   </body>
