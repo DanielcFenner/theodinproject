@@ -1,0 +1,22 @@
+<h1>{{title}}</h1>
+
+<form method="POST" action="">
+  <label for="name">Genre: </label>
+  <input
+    name="name"
+    type="text"
+    placeholder="Fantasy, Poetry etc."
+  />
+  <button type="submit">Submit</button>
+  </form>
+
+  {{#if errors}}
+    <ul>
+      {{#each errors}}
+        <li>
+          {{this.msg}}
+        </li>
+      {{/each}}
+    </ul>
+  {{/if}}
+</form>

@@ -1,4 +1,4 @@
-<h1>{{this.name}}</h1>
+<h1>{{genre.name}}</h1>
 
 <div>
   <h3>Books</h3>
@@ -7,5 +7,8 @@
       <a href={{this.url}}>{{this.title}}</a>
       <p>{{this.summary}}</p>
     {{/each}}
+    {{#ifeq genre_books ""}}
+      <p>There are no {{genre.name}} books</p>
+    {{/ifeq}}
   </div>
 </div>

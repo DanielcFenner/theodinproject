@@ -1,0 +1,53 @@
+<h1>{{title}}</h1>
+
+<form method="post" action="">
+  <label for="title">Title: </label>
+  <input
+    type="text"
+    placeholder="Name of book"
+    name="title"
+    required="true"
+  />
+  <label for="author">Author: </label>
+  <select
+    type="select"
+    placeholder="Select author"
+    name="author"
+    required="true"
+  >
+    {{#each authors}}
+      <option value={{this._id}}>{{this.name}}</option>
+    {{/each}}
+  </select>
+  <label for="summary">Summary: </label>
+  <textarea
+    type="textarea"
+    placeholder="Summary"
+    name="summary"
+    require="true"
+  ></textarea>
+  <label for="isbn">ISBN: </label>
+  <input type="text" name="isbn" required="true" />
+  <label>Genre: </label>
+  {{#each genres}}
+    <input
+      type="checkbox"
+      name="genre"
+      id={{this._id}}
+      value={{this._id}}
+    />
+    <label for={{this._id}}>{{this.name}}</label>
+  {{/each}}
+  <button type="submit">Submit</button>
+
+  {{#if errors}}
+    <ul>
+      {{#each errors}}
+        <li>
+          {{this.msg}}
+        </li>
+      {{/each}}
+    </ul>
+  {{/if}}
+
+</form>

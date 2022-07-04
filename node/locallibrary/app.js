@@ -5,6 +5,8 @@ let path = require("path");
 let cookieParser = require("cookie-parser");
 let logger = require("morgan");
 let hbs = require("hbs");
+var compression = require("compression");
+var helmet = require("helmet");
 
 let indexRouter = require("./routes/index");
 let usersRouter = require("./routes/users");
@@ -41,6 +43,8 @@ hbs.registerHelper("ifeq", isEqualHelperHandlerbar);
 app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "hbs");
 
+app.use(helmet());
+app.use(compression());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

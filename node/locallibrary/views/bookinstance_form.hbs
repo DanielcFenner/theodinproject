@@ -1,0 +1,51 @@
+<h1>{{title}}</h1>
+
+<form method="post" action="">
+  <label for="book">Book: </label>
+  <select
+    type="select"
+    placeholder="Select book"
+    name="book"
+    required="true"
+  >
+    {{#each book_list}}
+      <option value={{this._id}}>{{this.title}}</option>
+    {{/each}}
+  </select>
+
+  <label for="imprint">Imprint: </label>
+  <input
+    type="text"
+    placeholder="Publisher and date information"
+    name="imprint"
+    require="true"
+  />
+
+  <label for="due_back">Date when book available: </label>
+  <input type="date" name="due_back" />
+
+  <label for="status">Status: </label>
+  <select
+    type="select"
+    placeholder="Select status"
+    name="status"
+    required="true"
+  >
+    <option value="Maintenance">Maintenance</option>
+    <option value="Available">Available</option>
+    <option value="Loaned">Loaned</option>
+    <option value="Reserved">Reserved</option>
+  </select>
+
+  <button type="submit">Submit</button>
+
+  {{#if errors}}
+    <ul>
+      {{#each errors}}
+        <li>
+          {{this.msg}}
+        </li>
+      {{/each}}
+    </ul>
+  {{/if}}
+</form>
