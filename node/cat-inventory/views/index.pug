@@ -1,5 +1,17 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  
+  .wrapper
+    h1= title
+    .catGrid
+      each cat in catList
+        .catCard
+          .catPic= cat.pic
+          .catName= cat.name
+          .catDescription= cat.description
+          .catStock Stock: #[=cat.stock]
+          .catCategoryContainer
+            p= cat.category.name
+          a.title(href=cat.url) Details
+      

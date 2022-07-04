@@ -1,8 +1,155 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+:root {
+  --orange1: hsl(24, 70%, 99%);
+  --orange2: hsl(24, 83.3%, 97.6%);
+  --orange3: hsl(24, 100%, 95.3%);
+  --orange4: hsl(25, 100%, 92.2%);
+  --orange5: hsl(25, 100%, 88.2%);
+  --orange6: hsl(25, 100%, 82.8%);
+  --orange7: hsl(24, 100%, 75.3%);
+  --orange8: hsl(24, 94.5%, 64.3%);
+  --orange9: hsl(24, 94%, 50%);
+  --orange10: hsl(24, 100%, 46.5%);
+  --orange11: hsl(24, 100%, 37%);
+  --orange12: hsl(15, 60%, 17%);
+
+  margin: 0;
 }
 
-a {
-  color: #00B7FF;
+body {
+  background-color: var(--orange1);
+  margin: auto;
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  color: var(--orange12);
+}
+
+nav {
+  position: fixed;
+  backdrop-filter: blur(15px);
+  backdrop-filter: saturation(500%);
+  color: var(--orange12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: solid 1px var(--orange3);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--orange12);
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.title {
+  text-transform: none;
+}
+
+nav a:hover {
+  background-color: var(--orange4);
+}
+
+.navWrapper {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100%, 1024px);
+  margin: auto;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+}
+
+nav h2 {
+  margin: 0;
+}
+
+main {
+  padding-top: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.catGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.catCard {
+  gap: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--orange3);
+}
+
+.catPic {
+  font-size: 4rem;
+}
+
+.catName {
+  font-weight: 700;
+}
+
+.catCategoryContainer {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--orange11);
+}
+
+.catCard a {
+  text-align: center;
+  text-decoration: none;
+  color: var(--orange12);
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.catCard a:hover {
+  background-color: var(--orange4);
+}
+
+.wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 700px) {
+  .catGrid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.catCategoryContainer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  padding-left: 0rem;
+}
+
+.catCategory a {
+  all: unset;
+  padding: 0.35rem;
+  border-radius: 0.25rem;
+}
+
+.catCategory a:hover {
+  cursor: pointer;
+  background: var(--orange4);
 }
