@@ -12,6 +12,8 @@ block content
           .catDescription= cat.description
           .catStock Stock: #[=cat.stock]
           .catCategoryContainer
-            p= cat.category.name
+            each category in cat.category
+              .catCategory
+                a(href=category.url) #[=category.name]
           a.title(href=cat.url) Details
       

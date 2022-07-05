@@ -7,30 +7,11 @@ let CatSchema = new Schema({
   stock: { type: Number },
   category: [{ type: Schema.Types.ObjectId, ref: "Category" }],
   description: { type: String },
+  pic: { type: String },
 });
 
 CatSchema.virtual("url").get(function () {
   return "/cat/" + this._id;
-});
-
-CatSchema.virtual("pic").get(function () {
-  const emojis = [
-    "😺",
-    "😸",
-    "😹",
-    "😻",
-    "😼",
-    "😽",
-    "🐈‍⬛",
-    "🐈",
-    "🐱",
-    "😾",
-    "😿",
-    "🙀",
-  ];
-  let randomEmojiIndex = Math.floor(Math.random() * emojis.length);
-
-  return emojis[randomEmojiIndex];
 });
 
 //Export Cat

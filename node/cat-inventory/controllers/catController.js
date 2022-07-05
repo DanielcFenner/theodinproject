@@ -16,3 +16,21 @@ exports.index = function (req, res) {
       });
     });
 };
+
+exports.catDetail = function (req, res) {
+  Cat.findById(req.params.id)
+    .populate("category")
+    .exec(function (err, catList) {
+      if (err) {
+        return next(err);
+      }
+      res.render("catdetail", {
+        title: catList.name + " details",
+        catList,
+      });
+    });
+};
+
+exports.addCat = function (req, res) {
+  res.send("NYI");
+};

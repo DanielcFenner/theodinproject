@@ -18,7 +18,9 @@
 }
 
 body {
+  background-image: url(/images/11.svg);
   background-color: var(--orange1);
+  background-size: 125%;
   margin: auto;
   font-family: "Inter", sans-serif;
   font-size: 17px;
