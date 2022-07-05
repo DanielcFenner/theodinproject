@@ -4,3 +4,17 @@ block content
   
   .wrapper
     h1= title
+    .catDetail
+      .catDetailPic= cat.pic
+      .catDetailDescription= cat.description
+      .catDetailStock Stock: #[=cat.stock]
+      .catDetailCategories Categories: 
+        each category in cat.category
+          a(href=category.url) #[=category.name]
+      .catDetailButtons
+        form(method="post" action=cat._id + "/delete")
+          input(type="hidden" name="catid" value=cat._id)
+          button.delete delete
+          
+        a(href=cat._id + "/update")
+          button.update update

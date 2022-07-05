@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  
+  .wrapper
+    h1= title
+    form(method='POST' action='')
+        label(for="name") Name: 
+        input(type="text" name="name" id="name")
+        label(for="stock") Stock: 
+        input(type="number" name="stock" id="stock")
+        label(for="description") Description: 
+        textarea(type="text" name="description" id="description")
+        label(for="pic") Pic: 
+        select(name="pic" id="pic")
+            option(value="😺") 😺
+            option(value="😸") 😸
+            option(value="😹") 😹
+            option(value="😻") 😻
+            option(value="😼") 😼
+            option(value="😽") 😽
+            option(value="🙀") 🙀
+            option(value="😿") 😿
+            option(value="😾") 😾
+            option(value="🐱") 🐱
+            option(value="🐈") 🐈
+            option(value="🐈‍⬛") 🐈‍⬛
+        label(for="category") Category: 
+        .formCategories
+            each category in categories 
+                input(type="checkbox" name="category" id=category._id value=category._id) 
+                label(for=category._id)= category.name
+        button(type="submit") Submit
+ 
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg

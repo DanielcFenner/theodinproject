@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  
+  .wrapper
+    h1= title
+    form(method='POST' action='')
+        label(for="name") Name: 
+        input(type="text" name="name" id="name")
+        button(type="submit") Submit
+ 
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg

@@ -4,8 +4,9 @@ block content
   
   .wrapper
     h1= title
+
     .catGrid
-      each cat in catList
+      each cat in categoryCats
         .catCard
           .catPic= cat.pic
           .catName= cat.name
@@ -16,8 +17,12 @@ block content
               .catCategory
                 a(href=category.url) #[=category.name]
           a.title(href=cat.url) Details
-    h1 Categories
-    .categoriesGrid
-      each category in categories
-        a(href=category.url) #[=category.name]
-      
+
+        .categoryBottom
+          p You must delete all category cats before deleting the category
+          .categoryDetailButtons
+            form(method="post" action=category._id + "/delete")
+              input(type="hidden" name="categoryid" value=category._id)
+              button.delete delete
+            a(href=category._id + "/update")
+              button.update update

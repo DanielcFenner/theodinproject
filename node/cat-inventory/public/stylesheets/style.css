@@ -29,8 +29,7 @@ body {
 
 nav {
   position: fixed;
-  backdrop-filter: blur(15px);
-  backdrop-filter: saturation(500%);
+  backdrop-filter: blur(25px);
   color: var(--orange12);
   display: flex;
   align-items: center;
@@ -132,6 +131,10 @@ main {
   margin: 0 auto;
 }
 
+.title {
+  margin-top: auto;
+}
+
 @media screen and (min-width: 700px) {
   .catGrid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -154,4 +157,138 @@ main {
 .catCategory a:hover {
   cursor: pointer;
   background: var(--orange4);
+}
+
+.catDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.catDetailPic {
+  font-size: 10rem;
+}
+
+.catDetailCategories {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.catDetailCategories a {
+  all: unset;
+  color: var(--orange11);
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+}
+
+.catDetailCategories a:hover {
+  cursor: pointer;
+  background-color: var(--orange6);
+}
+
+.catDetailsButtons a {
+  text-decoration: none;
+}
+
+.catDetailButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.delete {
+  text-decoration: none;
+  border: none;
+  background-color: var(--orange9);
+  color: var(--orange12);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.delete:hover {
+  cursor: pointer;
+  background-color: var(--orange10);
+}
+
+.update {
+  text-decoration: none;
+  border: solid 1px var(--orange6);
+  background-color: var(--orange1);
+  color: var(--orange11);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.update:hover {
+  cursor: pointer;
+  border: solid 1px var(--orange7);
+}
+
+.categoryDetailButtons {
+  display: flex;
+  padding: 1rem 0rem;
+  gap: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  font: "Inter", sans-serif;
+  font-size: 1rem;
+}
+
+form input {
+  padding: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+form select {
+  padding: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+form textarea {
+  height: 5rem;
+  padding: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+form button {
+  text-decoration: none;
+  border: none;
+  background-color: var(--orange6);
+  color: var(--orange12);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+form button:hover {
+  cursor: pointer;
+  background-color: var(--orange7);
+}
+
+.categoriesGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.categoriesGrid a {
+  all: unset;
+  background-color: var(--orange4);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.categoriesGrid a:hover {
+  background-color: var(--orange5);
+  cursor: pointer;
 }
